@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Certificates Timeline</title>
+
+ <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="00.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+ 
+</head>
+<body>
+   <!-- HEADER -->
+  <header>
+      <!-- LOGO -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 70" width="250" height="50">
+  <!-- <MS/> -->
+  <text x="-3" y="55" font-family="monospace" font-size="58" font-weight="700" 
+        fill="#0ff"   opacity="7" style="text-shadow: 0 0 1px #0ff;">&lt;</text>
+
+  <text x="30" y="55" font-family="monospace" font-size="54" font-weight="700" 
+      fill=" var(--text)"    opacity="3" style="   text-shadow: 0 0 8px #0ff;">MS</text>
+
+  <text x="90" y="55" font-family="monospace" font-size="52" font-weight="700" 
+        fill="#0ff" opacity="7"  style="text-shadow: 0 0 1px #0ff;">/&gt;</text>
+
+  <!-- PORTFOLIO -->
+  <text x="170" y="55" font-family="Poppins, sans-serif" font-size="38" font-weight="600" 
+     letter-spacing="4" fill=" var(--text)"  style="  text-shadow: 0 0 10px #0ff;">PORTFOLIO</text>
+
+  <!-- خط تحت -->
+  <rect x="170" y="63" width="230" height="3" rx="2" 
+        fill="#0ff" opacity="7" style="filter: drop-shadow(0 0 1px #0ff);"/>
+</svg>
+    
+    <!-- قائمة الكمبيوتر -->
+    <nav class="desk-nav">
+      <a href="index.html">Home</a>
+      <a href="about me.html">About Me</a>
+      <a href="my skiils.html">My Skills</a>
+      <a href="sevices.html">Services</a>
+      <a href="portofolio.html">Portfolio</a>
+      <a href="certificates.html">Certificates</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <!-- زر القائمة (موبايل) -->
+    <button class="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- زر الثيم -->
+     <button class="theme-toggle desk-only"><i class="fas fa-adjust"></i></button>
+  </header>
+
+  <!-- قائمة الموبايل -->
+  <nav class="mobile-nav">
+    <button class="theme-toggle  top"><i class="fas fa-adjust"></i></button>
+    <a href="index.html">Home</a>
+    <a href="about me.html">About Me</a>
+    <a href="my skiils.html">My Skills</a>
+    <a href="sevices.html">Services</a>
+    <a href="portofolio.html">Portfolio</a>
+    <a href="certificates.html">Certificates</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <div class="overlay"></div>
+
+  <!-- ===== Certificates Section ===== -->
+  <section class="certificates">
+    <div class="container">
+      <h2 style="padding-top: 30px ;">Certificates</h2>
+      <div class="timeline">
+
+        <!-- Certificate 1 -->
+        <div class="timeline-item left" data-aos="fade-right">
+          <h3>Front-End Development</h3>
+          <p>Completed at <span>Mahara-Tech</span> – 2025</p>
+          <a href="Course_Certificate_En (5)  CSS & HTML _page-0001.pdf" target="_blank">View Certificate</a>
+        </div>
+
+        <!-- Certificate 2 -->
+        <div class="timeline-item right" data-aos="fade-left">
+          <h3>full stack developer</h3>
+          <p>Completed at <span>Udemy</span> – 2025</p>
+          <a href="fall stack udemy .pdf" target="_blank">View Certificate</a>
+        </div>
+
+        <!-- Certificate 3 -->
+        <div class="timeline-item left" data-aos="fade-right">
+          <h3>Flutter & Dart</h3>
+          <p>Completed at <span>Easy Learn Academy</span> – 2025</p>
+          <a href="Flutter.pdf" target="_blank">View Certificate</a>
+        </div>
+
+        <!-- Certificate 4 -->
+        <div class="timeline-item right" data-aos="fade-left">
+          <h3>Implementing and Developing SQL server objects</h3>
+          <p>Completed at <span>Mahara-Tech</span> – 2025</p>
+          <a href="my sql .pdf" target="_blank">View Certificate</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- AOS Animation in certificate Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+       // ===== Menu Toggle =====
+        const toggleBtn = document.querySelector(".menu-toggle");
+        const navMenu = document.querySelector("nav");
+        toggleBtn?.addEventListener("click", () => {
+          navMenu.classList.toggle("active");
+        });
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
+  <script src="333.js"></script>
+</body>
+</html>

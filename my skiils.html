@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Skills</title>
+ <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="00.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+  <style>
+  
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    /* ===== Skills Section ===== */
+    .skills {
+      padding: 130px 20px;
+      text-align: center;
+    }
+    .skills h2 {
+      font-size: 2.8rem;
+     
+      margin-bottom: 60px;
+      position: relative;
+      display: inline-block;
+    }
+    .skills h2::after {
+      content: '';
+      display: block;
+      width: 70px;
+      height: 3px;
+      background:var(--accent); /* لون ديناميكي */
+      margin: 12px auto 0;
+      border-radius: 2px;
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+   
+    
+    .skill-card {
+      background:   var(--panel); /* يتغير حسب الثيم */
+      border-radius: 15px;
+      padding: 25px 20px; /* 🔹 صغرنا الكارد */
+      transition: 0.3s;
+      box-shadow: 0 0 10px rgba(0,240,255,0.25);
+      text-align: left;
+    }
+    .skill-card:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 0 20px #00f0ff;
+    }
+    .skill-card i {
+      font-size: 1.8rem;
+      color: #00f0ff;
+      margin-bottom: 12px;
+    }
+    .skill-card h3 {
+      font-size: 1.2rem;
+      
+      margin-bottom: 8px;
+    }
+    .skill-card p {
+      font-size: 0.9rem;
+     
+      line-height: 1.5;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <!-- LOGO -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 70" width="250" height="50">
+  <!-- <MS/> -->
+  <text x="-3" y="55" font-family="monospace" font-size="58" font-weight="700" 
+        fill="#0ff"   opacity="7" style="text-shadow: 0 0 1px #0ff;">&lt;</text>
+
+  <text x="30" y="55" font-family="monospace" font-size="54" font-weight="700" 
+      fill=" var(--text)"    opacity="3" style="   text-shadow: 0 0 8px #0ff;">MS</text>
+
+  <text x="90" y="55" font-family="monospace" font-size="52" font-weight="700" 
+        fill="#0ff" opacity="7"  style="text-shadow: 0 0 1px #0ff;">/&gt;</text>
+
+  <!-- PORTFOLIO -->
+  <text x="170" y="55" font-family="Poppins, sans-serif" font-size="38" font-weight="600" 
+     letter-spacing="4" fill=" var(--text)"  style="  text-shadow: 0 0 10px #0ff;">PORTFOLIO</text>
+
+  <!-- خط تحت -->
+  <rect x="170" y="63" width="230" height="3" rx="2" 
+        fill="#0ff" opacity="7" style="filter: drop-shadow(0 0 1px #0ff);"/>
+</svg>
+    
+    <!-- قائمة الكمبيوتر -->
+    <nav class="desk-nav">
+      <a href="index.html">Home</a>
+      <a href="about me.html">About Me</a>
+      <a href="my skiils.html">My Skills</a>
+      <a href="sevices.html">Services</a>
+      <a href="portofolio.html">Portfolio</a>
+      <a href="certificates.html">Certificates</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <!-- زر القائمة (موبايل) -->
+    <button class="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- زر الثيم -->
+     <button class="theme-toggle desk-only"><i class="fas fa-adjust"></i></button>
+  </header>
+
+  <!-- قائمة الموبايل -->
+  <nav class="mobile-nav">
+    <button class="theme-toggle  top"><i class="fas fa-adjust"></i></button>
+    <a href="index.html">Home</a>
+    <a href="about me.html">About Me</a>
+    <a href="my skiils.html">My Skills</a>
+    <a href="sevices.html">Services</a>
+    <a href="portofolio.html">Portfolio</a>
+    <a href="certificates.html">Certificates</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <div class="overlay"></div>
+
+  <!-- ===== My Skills Section ===== -->
+  <section class="skills">
+    <div class="container">
+      <h2>My Skills</h2>
+      <div class="skills-grid">
+        
+        <div class="skill-card" data-aos="fade-up">
+          <i class="fab fa-html5"></i>
+          <h3>HTML5</h3>
+          <p>Building clean, semantic, and SEO-friendly website structures using modern HTML standards.</p>
+        </div>
+
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
+          <i class="fab fa-css3-alt"></i>
+          <h3>CSS3</h3>
+          <p>Designing responsive, modern layouts with animations and effects for engaging user experiences.</p>
+        </div>
+
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="200">
+          <i class="fab fa-js"></i>
+          <h3>JavaScript</h3>
+          <p>Adding interactivity and functionality with clean, efficient, and scalable JavaScript code.</p>
+        </div>
+
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="300">
+          <i class="fab fa-react"></i>
+          <h3>React</h3>
+          <p>Developing dynamic single-page applications with reusable components and state management.</p>
+        </div>
+
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="400">
+          <i class="fab fa-node-js"></i>
+          <h3>Node.js</h3>
+          <p>Creating backend services, REST APIs, and server-side logic with Node.js and Express.</p>
+        </div>
+
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="500">
+          <i class="fas fa-database"></i>
+          <h3>Databases</h3>
+          <p>Managing and integrating relational (MySQL) and non-relational (MongoDB) databases.</p>
+        </div>
+
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="600">
+          <i class="fab fa-git-alt"></i>
+          <h3>Git & GitHub</h3>
+          <p>Version control, collaboration, and deployment using Git workflow and GitHub repositories.</p>
+        </div>
+
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="700">
+          <i class="fas fa-laptop-code"></i>
+          <h3>Problem Solving</h3>
+          <p>Strong analytical thinking and debugging skills to find efficient solutions for complex challenges.</p>
+        </div>
+
+        <!-- ✅ New Skills -->
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="800">
+          <i class="fab fa-python"></i>
+          <h3>Python</h3>
+          <p>Building automation scripts, data analysis, and backend solutions using Python libraries.</p>
+        </div>
+
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="900">
+          <i class="fas fa-microchip"></i>
+          <h3>Arduino</h3>
+          <p>Programming microcontrollers and creating IoT & robotics projects with Arduino boards.</p>
+        </div>
+
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="1000">
+          <i class="fab fa-java"></i>
+          <h3>Java</h3>
+          <p>Developing robust desktop and Android applications with Object-Oriented Programming in Java.</p>
+        </div>
+
+        <!-- 🔹 دمج C و C++ -->
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="1100">
+          <i class="fas fa-code"></i>
+          <h3>C / C++</h3>
+          <p>System programming, OOP, data structures, and performance-driven applications.</p>
+        </div>
+
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="1200">
+          <i class="fab fa-php"></i>
+          <h3>PHP</h3>
+          <p>Developing dynamic websites and server-side applications using PHP and frameworks like Laravel.</p>
+        </div>
+
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="1300">
+          <i class="fas fa-mobile-alt"></i>
+          <h3>Kotlin</h3>
+          <p>Building modern, efficient Android applications with Kotlin for seamless mobile experiences.</p>
+        </div>
+
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="1400">
+          <i class="fas fa-hashtag"></i>
+          <h3>C#</h3>
+          <p>Developing desktop, web, and game applications with .NET and Unity using C# programming.</p>
+        </div>
+
+        <!-- 🔹 Digital Marketing -->
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="1500">
+          <i class="fas fa-bullhorn"></i>
+          <h3>Digital Marketing</h3>
+          <p>Managing social media campaigns, SEO, and online ads to boost brand visibility and engagement.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+    <!-- استدعاء مكتبة AOS CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+    <!-- استدعاء مكتبة AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // ===== Menu Toggle =====
+        const toggleBtn = document.querySelector(".menu-toggle");
+        const navMenu = document.querySelector("nav");
+        toggleBtn?.addEventListener("click", () => {
+          navMenu.classList.toggle("active");
+        });
+
+        
+
+        // ===== Typed Effect =====
+        
+        const typedEl = document.getElementById("typed");
+        let phraseIndex = 0,
+          charIndex = 0,
+          deleting = false;
+
+        function typeEffect() {
+          if (!typedEl) return;
+          const current = phrases[phraseIndex];
+          if (!deleting) {
+            typedEl.textContent = current.slice(0, ++charIndex);
+            if (charIndex === current.length) {
+              deleting = true;
+              setTimeout(typeEffect, 1200);
+              return;
+            }
+          } else {
+            typedEl.textContent = current.slice(0, --charIndex);
+            if (charIndex === 0) {
+              deleting = false;
+              phraseIndex = (phraseIndex + 1) % phrases.length;
+            }
+          }
+          setTimeout(typeEffect, deleting ? 60 : 90);
+        }
+        typeEffect(); // يبدأ التأثير مباشرة بعد DOMContentLoaded
+
+        // ===== Scroll Animations =====
+        const scrollElements = document.querySelectorAll(
+          ".card, .cardP, .hero-text, .hero-img"
+        );
+        const observer = new IntersectionObserver(
+          (entries, observer) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+         
+        );
+        scrollElements.forEach((el) => observer.observe(el));
+
+        // ===== AOS Initialization =====
+        AOS.init({
+          duration: 1000,
+          once: true,
+        });
+      });
+    </script>
+  <script src="333.js"></script>
+</body>
+</html>

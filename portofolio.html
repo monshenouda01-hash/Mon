@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Document</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap"
+    rel="stylesheet"
+  />
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="00.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+  <style>
+    /* Animation عند تحميل الصفحة */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1.2s ease forwards;
+    }
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+ <!-- HEADER -->
+  <header>
+     <!-- LOGO -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 70" width="250" height="50">
+  <!-- <MS/> -->
+  <text x="-3" y="55" font-family="monospace" font-size="58" font-weight="700" 
+        fill="#0ff"   opacity="7" style="text-shadow: 0 0 1px #0ff;">&lt;</text>
+
+  <text x="30" y="55" font-family="monospace" font-size="54" font-weight="700" 
+      fill=" var(--text)"    opacity="3" style="   text-shadow: 0 0 8px #0ff;">MS</text>
+
+  <text x="90" y="55" font-family="monospace" font-size="52" font-weight="700" 
+        fill="#0ff" opacity="7"  style="text-shadow: 0 0 1px #0ff;">/&gt;</text>
+
+  <!-- PORTFOLIO -->
+  <text x="170" y="55" font-family="Poppins, sans-serif" font-size="38" font-weight="600" 
+     letter-spacing="4" fill=" var(--text)"  style="  text-shadow: 0 0 10px #0ff;">PORTFOLIO</text>
+
+  <!-- خط تحت -->
+  <rect x="170" y="63" width="230" height="3" rx="2" 
+        fill="#0ff" opacity="7" style="filter: drop-shadow(0 0 1px #0ff);"/>
+</svg>
+    
+    <!-- قائمة الكمبيوتر -->
+    <nav class="desk-nav">
+      <a href="index.html">Home</a>
+      <a href="about me.html">About Me</a>
+      <a href="my skiils.html">My Skills</a>
+      <a href="sevices.html">Services</a>
+      <a href="portofolio.html">Portfolio</a>
+      <a href="certificates.html">Certificates</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <!-- زر القائمة (موبايل) -->
+    <button class="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- زر الثيم -->
+     <button class="theme-toggle desk-only"><i class="fas fa-adjust"></i></button>
+  </header>
+
+  <!-- قائمة الموبايل -->
+  <nav class="mobile-nav">
+    <button class="theme-toggle  top"><i class="fas fa-adjust"></i></button>
+    <a href="index.html">Home</a>
+    <a href="about me.html">About Me</a>
+    <a href="my skiils.html">My Skills</a>
+    <a href="sevices.html">Services</a>
+    <a href="portofolio.html">Portfolio</a>
+    <a href="certificates.html">Certificates</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <div class="overlay"></div>
+
+  <!-- PORTFOLIO -->
+  <section id="portfolio" class="fade-in">
+    <h2 data-aos="fade-down">Latest <span style="color: var(--accent)">Projects</span></h2>
+    <div class="grid">
+      <article class="cardP" data-aos="zoom-in-up" data-aos-delay="200">
+        <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=800" />
+        <div class="overlay">
+          <h3>Photography</h3>
+          <p>High quality visuals for branding.</p>
+        </div>
+        <span class="badge"><i class="fas fa-eye"></i><a href="https://hospital-api-production-c028.up.railway.app/">View</a></span>
+      </article>
+
+       <article class="cardP" data-aos="zoom-in-up" data-aos-delay="600">
+        <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=800" />
+        <div class="overlay">
+          <h3>UI/UX</h3>
+          <p>Interfaces designed for conversion.</p>
+        </div>
+        <span class="badge"><i class="fas fa-eye"></i><a href="https://qasr-el-salam.runasp.net/">View</a></span>
+      </article>
+
+      <article class="cardP" data-aos="zoom-in-up" data-aos-delay="400">
+        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800" />
+        <div class="overlay">
+          <h3>Web Design</h3>
+          <p>Modern web designs with UI/UX focus.</p>
+        </div>
+        <span class="badge"><i class="fas fa-eye"></i><a href="project 3 in portofolio.html">View</a></span>
+      </article>
+
+     
+    </div>
+  </section>
+
+  <!-- استدعاء مكتبة AOS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // ===== Menu Toggle =====
+      const toggleBtn = document.querySelector(".menu-toggle");
+      const navMenu = document.querySelector("nav");
+      toggleBtn?.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+      });
+
+      // ===== Typed Effect =====
+      const phrases = [
+        "build responsive websites.",
+        "design intuitive interfaces.",
+        "turn ideas into products.",
+      ];
+      const typedEl = document.getElementById("typed");
+      let phraseIndex = 0,
+        charIndex = 0,
+        deleting = false;
+
+      function typeEffect() {
+        if (!typedEl) return;
+        const current = phrases[phraseIndex];
+        if (!deleting) {
+          typedEl.textContent = current.slice(0, ++charIndex);
+          if (charIndex === current.length) {
+            deleting = true;
+            setTimeout(typeEffect, 1200);
+            return;
+          }
+        } else {
+          typedEl.textContent = current.slice(0, --charIndex);
+          if (charIndex === 0) {
+            deleting = false;
+            phraseIndex = (phraseIndex + 1) % phrases.length;
+          }
+        }
+        setTimeout(typeEffect, deleting ? 60 : 90);
+      }
+      typeEffect();
+
+      // ===== Scroll Animations =====
+      const scrollElements = document.querySelectorAll(
+        ".card, .cardP, .hero-text, .hero-img"
+      );
+      const observer = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("show");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+      scrollElements.forEach((el) => observer.observe(el));
+
+      // ===== AOS Initialization =====
+      AOS.init({
+        duration: 1000,
+        once: true,
+        startEvent: "DOMContentLoaded" // يبدأ أول ما الصفحة تتحمل
+      });
+    });
+  </script>
+  <script src="333.js"></script>
+</body>
+</html>

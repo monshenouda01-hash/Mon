@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="00.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+</head>
+<body>
+
+ <!-- HEADER -->
+  <header>
+      <!-- LOGO -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 70" width="250" height="50">
+  <!-- <MS/> -->
+  <text x="-3" y="55" font-family="monospace" font-size="58" font-weight="700" 
+        fill="#0ff"   opacity="7" style="text-shadow: 0 0 1px #0ff;">&lt;</text>
+
+  <text x="30" y="55" font-family="monospace" font-size="54" font-weight="700" 
+      fill=" var(--text)"    opacity="3" style="   text-shadow: 0 0 8px #0ff;">MS</text>
+
+  <text x="90" y="55" font-family="monospace" font-size="52" font-weight="700" 
+        fill="#0ff" opacity="7"  style="text-shadow: 0 0 1px #0ff;">/&gt;</text>
+
+  <!-- PORTFOLIO -->
+  <text x="170" y="55" font-family="Poppins, sans-serif" font-size="38" font-weight="600" 
+     letter-spacing="4" fill=" var(--text)"  style="  text-shadow: 0 0 10px #0ff;">PORTFOLIO</text>
+
+  <!-- خط تحت -->
+  <rect x="170" y="63" width="230" height="3" rx="2" 
+        fill="#0ff" opacity="7" style="filter: drop-shadow(0 0 1px #0ff);"/>
+</svg>
+    
+    <!-- قائمة الكمبيوتر -->
+    <nav class="desk-nav">
+      <a href="index.html">Home</a>
+      <a href="about me.html">About Me</a>
+      <a href="my skiils.html">My Skills</a>
+      <a href="sevices.html">Services</a>
+      <a href="portofolio.html">Portfolio</a>
+      <a href="certificates.html">Certificates</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <!-- زر القائمة (موبايل) -->
+    <button class="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- زر الثيم -->
+     <button class="theme-toggle desk-only"><i class="fas fa-adjust"></i></button>
+  </header>
+
+  <!-- قائمة الموبايل -->
+  <nav class="mobile-nav">
+    <button class="theme-toggle  top"><i class="fas fa-adjust"></i></button>
+    <a href="index.html">Home</a>
+    <a href="about me.html">About Me</a>
+    <a href="my skiils.html">My Skills</a>
+    <a href="sevices.html">Services</a>
+    <a href="portofolio.html">Portfolio</a>
+    <a href="certificates.html">Certificates</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <div class="overlay"></div>
+
+
+   <!-- CONTACT -->
+<section class="contact-container" id="contact">
+  <div class="contact-card" data-aos="zoom-in" data-aos-duration="1200">
+    <h2 data-aos="fade-down">Contact Me</h2>
+    <input type="text" placeholder="Your Name" data-aos="fade-right" data-aos-delay="200">
+    <input type="email" placeholder="Your Email" data-aos="fade-left" data-aos-delay="300">
+    <textarea placeholder="Your Message" data-aos="fade-up" data-aos-delay="400"></textarea>
+    <button data-aos="flip-up" data-aos-delay="500">Send Message</button>
+
+    <!-- Socials -->
+    <div class="socials" data-aos="fade-up" data-aos-delay="600">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-whatsapp"></i></a>
+    </div>
+  </div>
+</section>
+
+ <footer style="margin-bottom: 0; ">© 2025 Mina Shenouda — All Rights Reserved</footer>
+
+
+<!-- AOS Script -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+     // ===== Menu Toggle =====
+        const toggleBtn = document.querySelector(".menu-toggle");
+        const navMenu = document.querySelector("nav");
+        toggleBtn?.addEventListener("click", () => {
+          navMenu.classList.toggle("active");
+        });
+  AOS.init({
+    duration: 1000,
+    once: true
+  });
+</script>
+<script src="333.js"></script> 
+</body>
+</html>

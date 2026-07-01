@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Me</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet" />
+
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="00.css" />
+
+  <style>
+    html, body {
+      margin : 0;
+      padding: 0;
+      height: 100%;
+      overflow-x: hidden;
+    }
+
+    body {
+ 
+      background: #0a0a0a;
+      
+      font-family: "Poppins", sans-serif;
+      margin-bottom: 0 !important;
+      padding-bottom: 0 !important;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    /* ===== About Section ===== */
+    .about-modern {
+     
+      min-height: 100vh;         /* ملء الشاشة */
+      display: flex;
+      align-items: center;       /* وسطي رأسي */
+      justify-content: center;   /* وسطي أفقي */
+      padding: 100px 20px;
+      margin-top: 50px;
+      margin-bottom: 0;
+               /* padding يمين وشمال فقط */
+    }
+
+    .about-modern .about-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 50px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ===== Image ===== */
+    .about-modern .about-img {
+      flex: 1;
+      text-align: center;
+    }
+    .about-modern .about-img img {
+      width: 280px;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid #00f0ff;
+      box-shadow: 0 0 25px #00f0ff;
+      transition: 0.3s;
+    }
+    .about-modern .about-img img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 40px #00f0ff;
+    }
+
+    /* ===== Text ===== */
+    .about-modern .about-text {
+      flex: 1;
+      max-width: 600px;
+    }
+    .about-modern .about-text h2 {
+      font-size: 2.5rem;
+      color: #00f0ff;
+      margin-bottom: 20px;
+      position: relative;
+    }
+    .about-modern .about-text h2::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: #00f0ff;
+      margin-top: 8px;
+      border-radius: 2px;
+    }
+    .about-modern .about-text p {
+      font-size: 1.1rem;
+   
+      margin-bottom: 30px;
+      line-height: 1.8;
+    }
+    .about-modern .about-text span {
+      color: #00f0ff;
+      font-weight: bold;
+    }
+
+    /* ===== Buttons ===== */
+    .about-buttons {
+      display: flex;
+      gap: 15px;
+    }
+
+ 
+    .about-buttons a {
+      text-decoration: none;
+      color: #00f0ff;
+      background: #0a0a0a;
+      padding: 12px 35px ;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: 0.3s;
+      box-shadow: 0 0 15px #00f0ff;
+    }
+    .about-buttons a:hover {
+      background: #00f0ff;
+      color: #0a0a0a;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <!-- LOGO -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 70" width="250" height="50">
+  <!-- <MS/> -->
+  <text x="-3" y="55" font-family="monospace" font-size="58" font-weight="700" 
+        fill="#0ff"   opacity="7" style="text-shadow: 0 0 1px #0ff;">&lt;</text>
+
+  <text x="30" y="55" font-family="monospace" font-size="54" font-weight="700" 
+      fill=" var(--text)"    opacity="3" style="   text-shadow: 0 0 8px #0ff;">MS</text>
+
+  <text x="90" y="55" font-family="monospace" font-size="52" font-weight="700" 
+        fill="#0ff" opacity="7"  style="text-shadow: 0 0 1px #0ff;">/&gt;</text>
+
+  <!-- PORTFOLIO -->
+  <text x="170" y="55" font-family="Poppins, sans-serif" font-size="38" font-weight="600" 
+     letter-spacing="4" fill=" var(--text)"  style="  text-shadow: 0 0 10px #0ff;">PORTFOLIO</text>
+
+  <!-- خط تحت -->
+  <rect x="170" y="63" width="230" height="3" rx="2" 
+        fill="#0ff" opacity="7" style="filter: drop-shadow(0 0 1px #0ff);"/>
+</svg>
+    
+    <!-- قائمة الكمبيوتر -->
+    <nav class="desk-nav">
+      <a href="index.html">Home</a>
+      <a href="about me.html">About Me</a>
+      <a href="my skiils.html">My Skills</a>
+      <a href="sevices.html">Services</a>
+      <a href="portofolio.html">Portfolio</a>
+      <a href="certificates.html">Certificates</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <!-- زر القائمة (موبايل) -->
+    <button class="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- زر الثيم -->
+     <button class="theme-toggle desk-only"><i class="fas fa-adjust"></i></button>
+  </header>
+
+  <!-- قائمة الموبايل -->
+  <nav class="mobile-nav">
+    <button class="theme-toggle  top"><i class="fas fa-adjust"></i></button>
+    <a href="index.html">Home</a>
+    <a href="about me.html">About Me</a>
+    <a href="my skiils.html">My Skills</a>
+    <a href="sevices.html">Services</a>
+    <a href="portofolio.html">Portfolio</a>
+    <a href="certificates.html">Certificates</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <div class="overlay"></div>
+
+  <!-- ===== About Me Section ===== -->
+  <section class="about-modern">
+    <div class="container about-container">
+      
+      <!-- Image -->
+      <div class="about-img" data-aos="fade-right">
+        <img src=" WhatsApp Image 2026-07-01 at 4.09.17 PM.jpeg" alt="Profile Picture">
+      </div>
+      
+      <!-- Text -->
+      <div class="about-text" data-aos="fade-left">
+        <h2>About Me</h2>
+        <p>
+          I'm a passionate <span>Web Developer</span> with experience in 
+          <span>modern frameworks</span> and a strong focus on creating 
+          <span>responsive</span>, <span>user-friendly</span> websites.  
+          My goal is to turn ideas into powerful digital solutions that 
+          deliver real value.
+        </p>
+
+        <!-- Buttons -->
+        <div class="about-buttons">
+          <a href="Mina_Shenouda_CV_ATS (3).pdf" download>Download CV</a>
+          <a href="contact.html">Contact Me</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AOS Animation Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    // ===== Menu Toggle =====
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const navMenu = document.querySelector("nav");
+    toggleBtn?.addEventListener("click", () => {
+      navMenu.classList.toggle("active");
+    });
+
+    // AOS Init
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
+
+  <!-- External JS -->
+  <script src="333.js"></script>
+</body>
+</html>

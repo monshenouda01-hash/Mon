@@ -1,0 +1,1041 @@
+:root {
+  --bg-start: #0a0a0f;
+  --bg-end: #141426;
+  --panel: #111122;
+  --accent: #0ff;   /* أخضر نيون ثابت */
+  --muted: #9aa0a6;
+  --text: #fff;
+}
+
+/* الوضع الداكن */
+[data-theme="dark"] {
+  --bg-start: #0a0a0f;
+  --bg-end: #141426;
+  --panel: #111122;
+  --text: #fff;
+  --accent: #0ff;
+}
+
+/* الوضع الفاتح */
+[data-theme="light"] {
+  --bg-start: #f9f9ff;
+  --bg-end: #e0e0ff;
+  --panel: #fff;
+  --text: #000000 !important; /* النص غامق عشان يبان */
+  --accent: #0ff;
+}
+
+/* ===== Global ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(145deg, var(--bg-start), var(--bg-end));
+  color: var(--text);
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+/* ===== HEADER ===== */
+header {
+  width: 100%;
+  padding: 20px 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(17, 17, 34, 0.6) /* لون غامق شفاف */ !important;
+  border-bottom: 2px solid rgba(0, 240, 255, 0.3); /* خط تحت بسيط نيون */
+
+
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  animation: slideDown 1s ease forwards;
+}
+
+/* حركة نزول الهيدر */
+@keyframes slideDown {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--muted) !important;
+  text-shadow: 0 0 15px var(--accent);
+}
+
+nav {
+  display: flex;
+  gap: 40px !important;
+  align-items: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text) !important;
+  font-weight: 500;
+  position: relative;
+  transition: 0.3s;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background: var(--accent);
+  box-shadow: 0 0 8px var(--accent);
+  transition: 0.3s;
+}
+
+
+
+
+
+
+
+
+ nav a:hover {
+  color: var(--accent) !important;
+}
+ nav a:hover::after {
+  width: 100%;
+
+
+
+}
+nav a.active {
+  color: var(--accent) !important;
+}
+
+nav a.active::after {
+  width: 0%;
+}
+
+
+
+
+
+
+/* زر تغيير الثيم */
+.theme-toggle {
+  font-size: 22px;
+  margin-left: 20px;
+  color: var(--accent);
+  cursor: pointer;
+  background: none;
+  border: none;
+  width: 40px;
+}
+
+
+
+/* ===== HERO ===== */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10%;
+  padding-top: 160px;
+  overflow: hidden;
+  flex-wrap: wrap;
+ 
+}
+.hero-text {
+ 
+  max-width: 650px;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeSlideUp 1.2s ease forwards 0.5s;
+}
+.hero-text h1 {
+  font-size: 56px;
+  font-weight: 900;
+  line-height: 1.2;
+}
+.hero-text h1 span {
+  color: var(--muted);
+  text-shadow: 0 0 15px var(--accent);
+}
+.hero-text h3 {
+  font-size: 38px;
+  margin: 15px 0;
+  color: var(--muted);
+  width: 100%;
+}
+
+
+
+.mobile-nav a {
+  position: relative;
+  transition: color 0.7s ease;
+}
+
+.mobile-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background: var(--accent);
+  box-shadow: 0 0 8px var(--accent);
+  transition: width 0.7s ease;
+}
+
+.mobile-nav a.touched {
+  color: var(--accent) !important;
+}
+
+.mobile-nav a.touched::after {
+  width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+@media (hover: hover) and (pointer: fine) {
+  nav a:hover {
+    color: var(--accent) !important;
+  }
+  nav a:hover::after {
+    width: 100%;
+  }
+}
+
+
+
+/* العنصر يظهر بس على الموبايل */
+.mobile-only {
+  display: none;
+}
+
+@media (max-width: 768px) {
+ .hero-text h3 {
+  display: block;
+  font-size: 22px;
+  padding: 0 2%;
+  margin: 25px 0;
+  color: var(--muted);
+  width: 100%;
+  font-weight: bolder;
+} 
+.mobile-nav a.active {
+  color:var(--accent)  !important;
+  font-weight: bold;
+}
+
+
+  
+
+
+
+.hero-text h1 {
+  font-size: 27px;
+  font-weight: 900;
+  line-height: 1.2;
+  padding: 0 5px;
+  
+}
+
+.hero-text p {
+  margin: 20px 1;
+  font-size: 16px !important;
+  color: var(--muted) ;
+  padding: 0 5px;
+}
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 3%;
+  padding-top: 120px !important;
+  overflow: hidden;
+  flex-wrap: wrap;
+ 
+}
+.hero-img{
+  margin: 0 10%;
+  
+}
+header{
+  padding: 20px 3%!important;
+   background: rgba(33, 33, 51, 0.408) !important;
+}
+  
+}
+
+
+
+
+.hero-text #typed {
+  color: var(--accent);
+  text-shadow: 0 0 10px var(--accent);
+}
+.hero-text p {
+  margin: 20px 0;
+  font-size: 18px;
+  color: var(--muted) ;
+}
+.btn {
+  display: inline-block;
+  padding: 12px 27px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border-radius: 30px;
+  background: var(--accent);
+  color: #000;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 0 20px var(--accent);
+  transition: 0.3s;
+}
+.btn:hover {
+  transform: translateY(-3px) scale(1.05);
+}
+.btn-outline {
+  background: transparent;
+  color: var(--accent);
+  border: 2px solid var(--accent);
+  margin-left: 10px;
+}
+.btn-outline:hover {
+  background: var(--accent);
+  color: #000;
+}
+
+
+
+.hero-img {
+  width: 300px;
+  height: 340px;
+  clip-path: polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%);
+  background: var(--accent);
+  box-shadow: 0 0 30px var(--accent);
+  overflow: hidden;
+  opacity: 0;
+  transform: scale(0.5) rotate(-10deg);
+  animation: zoomRotate 2s ease forwards 1.5s, floatHex 4s ease-in-out infinite;
+}
+.hero-img img {
+ 
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 2s ease;
+}
+.hero-img:hover img {
+  transform: translateY(-20px);
+}
+
+@keyframes floatHex {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+@keyframes fadeSlideUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes zoomRotate {
+  to { opacity: 1; transform: scale(1) rotate(0deg); }
+}
+
+/* ===== SECTIONS ===== */
+section {
+  padding: 100px 10%;
+}
+section h2 {
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 40px;
+  color: var(--accent);
+  text-shadow: 0 0 10px var(--accent);
+}
+
+/* ===== SERVICES ===== */
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  justify-content: center;
+}
+.services .card {
+  background: var(--panel);
+  padding: 25px;
+
+  border-radius: 14px;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+  transition: 0.4s;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(30px);
+}
+.services .card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.services .card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.6);
+}
+.services .card i {
+  margin-bottom: 15px;
+  font-size: 36px;
+  color: var(--accent);
+}
+
+/* ===== PORTFOLIO ===== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+}
+.cardP {
+  position: relative;
+  background: var(--panel);
+  border-radius: 18px;
+  overflow: hidden;
+  min-height: 250px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: transform 0.5s, opacity 0.5s;
+}
+.cardP.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.cardP img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.56) contrast(0.9);
+  transition: transform 0.5s, filter 0.35s;
+}
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 28px;
+  text-align: center;
+  color: #fff;
+  opacity: 0;
+  transform: translateY(8px) scale(0.98);
+  transition: opacity 0.32s, transform 0.32s;
+  pointer-events: none;
+  background: linear-gradient(transparent, rgba(0, 255, 255, 0.6));
+}
+.cardP:hover img {
+  transform: scale(1.06);
+  filter: brightness(0.36) contrast(1.03);
+}
+.cardP:hover .overlay {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+/* ===== BADGE ===== */
+.badge {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 255, 255, 0.1);
+  border: 1px solid var(--accent);
+  padding: 8px 16px;
+  border-radius: 20px;
+  color: var(--accent);
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  opacity: 0;
+  transition: 0.3s;
+  pointer-events: none;
+}
+.cardP:hover .badge {
+  opacity: 1;
+  pointer-events: auto;
+  bottom: 24px;
+}
+.badge a {
+  text-decoration: none;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* ===== CONTACT ===== */
+
+/* ===== Sticky Footer Fix ===== */
+
+.contact-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 10%;
+  margin-top: 50px;
+}
+.contact-card {
+  background: var(--panel);
+  border-radius: 25px;
+  padding: 50px 40px;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 0 20px var(--accent);
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  position: relative;
+  transition: 0.5s;
+}
+.contact-card::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border-radius: 25px;
+  background-color:var(--panel);
+  background-size: 300% 300%;
+  animation: glow 8s linear infinite;
+  z-index: -1;
+  filter: blur(20px);
+}
+@keyframes glow {
+  0% { background-position: 0 0; }
+  50% { background-position: 300% 0; }
+  100% { background-position: 0 0; }
+}
+.contact-card h2 {
+  text-align: center;
+  color: var(--accent);
+  text-shadow: 0 0 15px var(--accent);
+  margin-bottom: 20px;
+  font-size: 32px;
+}
+.contact-card input,
+.contact-card textarea {
+  width: 100%;
+  padding: 15px 20px;
+  border-radius: 12px;
+  border: none;
+  background: #1a1a2a;
+  color: var(--text);
+  font-size: 16px;
+  outline: none;
+  transition: 0.3s;
+}
+.contact-card input:focus,
+.contact-card textarea:focus {
+  box-shadow: 0 0 12px var(--accent);
+}
+.contact-card textarea {
+  resize: none;
+  min-height: 120px;
+}
+.contact-card button {
+  padding: 15px 25px;
+  border-radius: 30px;
+  border: none;
+  background: #000;
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 0 20px var(--accent);
+}
+.contact-card button:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 30px var(--accent);
+  background: var(--accent);
+  color: #000;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+   gap: 10px;
+  margin-top: 15px;
+}
+.socials a {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  font-size: 20px;
+  transition: 0.3s;
+  text-decoration: none;
+}
+/* العنصر يظهر بس على الموبايل */
+
+
+@media (max-width: 768px) {
+ .socials a{
+    display: block;
+    width: 38px;
+  height: 38px;
+  border-radius: 70% !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  font-size: 20px;
+  transition: 0.3s;
+  text-decoration: none;
+
+  }
+  .contact-card{
+     box-shadow: 0 0 20px var(--accent);
+  }
+
+}
+
+
+
+.socials a:hover {
+  transform: scale(1.2);
+  background: var(--accent);
+  color: #000;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #0a0a0f;
+  color: #666;
+  font-size: 14px;
+  margin-top: 40px; /* مسافة فوق الفوتر */
+}
+
+
+
+
+
+
+ 
+/* ===== Skills Bars ===== */
+.skills-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+.skill-bar span {
+  font-size: 1rem;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+.progress {
+  background: rgba(0, 255, 255, 0.1);
+  border-radius: 30px;
+  overflow: hidden;
+  height: 14px;
+  position: relative;
+}
+.progress div {
+  height: 100%;
+  background: var(--accent);
+  box-shadow: 0 0 15px var(--accent);
+  border-radius: 30px;
+  position: relative;
+}
+.progress div::after {
+  content: attr(data-percent);
+  position: absolute;
+  right: 10px;
+  top: -25px;
+  font-size: 0.9rem;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* ===== About Buttons ===== */
+.about-buttons {
+  display: flex;
+  gap: 15px;
+}
+.about-buttons a {
+  text-decoration: none;
+  color: var(--accent);
+  background: #0a0a0a;
+  padding: 12px 25px;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: 0.3s;
+  box-shadow: 0 0 15px var(--accent);
+}
+/* العنصر يظهر بس على الموبايل */
+
+
+@media (max-width: 768px) {
+.about-buttons a  {
+    display: block;
+      padding: 12px 20px !important;
+  }
+}
+
+
+
+.about-buttons a:hover {
+  background: var(--accent);
+  color: #0a0a0a;
+}
+
+/* ===== Certificates Section ===== */
+    .certificates {
+      padding: 100px 20px;
+      text-align: center;
+      position: relative;
+    }
+    .certificates h2 {
+      font-size: 2.5rem;
+      color: #00f0ff;
+      margin-bottom: 50px;
+      position: relative;
+    }
+    .certificates h2::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: #00f0ff;
+      margin: 10px auto 0;
+      border-radius: 2px;
+    }
+
+    /* ===== Timeline ===== */
+    .timeline {
+      position: relative;
+      margin: 0 auto;
+      padding: 20px 0;
+    }
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 3px;
+      background: #00f0ff;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -1.5px;
+      box-shadow: 0 0 15px #00f0ff;
+    }
+
+    .timeline-item {
+      padding: 20px 10px;
+      position: relative;
+      background:var(--panel);
+      border: 1px solid rgba(0, 240, 255, 0.3);
+      border-radius: 15px;
+      width: 45%;
+      box-shadow: 0 0 20px rgba(0, 240, 255, 0.1);
+      transition: 0.3s;
+    }
+    .timeline-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 30px rgba(0, 240, 255, 0.4);
+    }
+
+    .timeline-item h3 {
+      color: #00f0ff;
+      margin-bottom: 10px;
+    }
+    .timeline-item p {
+      font-size: 0.95rem;
+      margin-bottom: 15px;
+      line-height: 1.6;
+    }
+    .timeline-item span {
+      font-weight: bold;
+      color: #00f0ff;
+    }
+    .timeline-item a {
+      display: inline-block;
+      text-decoration: none;
+      background:#0a0a0a;
+      color:#00f0ff;
+      padding: 8px 50px;
+      border-radius: 25px;
+      font-weight: 600;
+      transition: 0.3s;
+      box-shadow: 0 0 10px #00f0ff;
+
+    }
+    .timeline-item a:hover {
+      background: #00f0ff;
+      color: #0a0a0a;
+     
+    }
+
+    /* Positioning left and right */
+    .timeline-item.left {
+      left: 0;
+    }
+    .timeline-item.right {
+      left: 55%;
+    }
+
+    /* Dots */
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      top: 25px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #00f0ff;
+      box-shadow: 0 0 15px #00f0ff;
+      z-index: 1;
+    }
+    .timeline-item.left::before {
+      right: -40px;
+    }
+    .timeline-item.right::before {
+      left: -40px;
+    }
+
+@media screen and (max-width: 768px) {
+  .timeline {
+    padding-left: 30px !important; /* مسافة من الشمال */
+    margin-left:-30px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .timeline::after {
+    left: 40px;   /* مكان الخط */
+  
+   
+  }
+
+  .timeline-item {
+    position: relative;
+    width: 90%;
+    margin: 0 0 50px 5px;
+    left: 25px !important;
+  }
+
+  .timeline-item.left,
+  .timeline-item.right {
+    left: 0 ;
+  }
+
+  .timeline-item::before {
+    left: -27px;   /* 🔥 الدواير تبقى فوق الخط */
+    
+  }
+
+  .timeline-item .content {
+    margin-left: 30px; /* ✅ الكارد يبعد عن الخط شوية */
+  
+  }
+
+  body {
+    overflow-x: hidden !important;
+  }
+
+  
+}
+
+    /* زر الهامرجر */
+  
+  /* ====== الإعدادات العامة ====== */
+
+/* ====== الهيدر ====== */
+
+
+
+/* ====== القائمة (كمبيوتر) ====== */
+nav.desk-nav {
+  display: flex;
+  gap: 20px;
+}
+
+nav.desk-nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+body.light nav.desk-nav a {
+  color: #111;
+}
+
+nav.desk-nav a:hover {
+  color: #0ff;
+}
+
+/* ====== القائمة (موبايل) ====== */
+nav.mobile-nav {
+  position: fixed;
+  top: 0;
+  left: -260px;
+  width: 260px;
+  height: 100vh;
+  background: rgba(20, 20, 40, 0.95);
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 80px 20px;
+  transition: left 0.4s ease, opacity 0.4s ease;
+  opacity: 0;
+  z-index: 1200;
+}
+
+nav.mobile-nav.active {
+  left: 0;
+  opacity: 1;
+}
+
+nav.mobile-nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+nav.mobile-nav.active a {
+  animation: slideIn 0.5s ease forwards;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/* روابط الموبايل الافتراضية */
+nav.mobile-nav a {
+  color: white !important;
+  text-decoration: none;
+  font-size: 18px;
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+/* عند فتح القائمة */
+nav.mobile-nav.active a {
+  animation: slideDown 0.5s ease forwards;
+}
+
+/* أنيميشن النزول */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* نعمل تأخير لكل رابط لتظهر بشكل متسلسل */
+nav.mobile-nav.active a:nth-child(1) { animation-delay: 0.1s; }
+nav.mobile-nav.active a:nth-child(2) { animation-delay: 0.2s; }
+nav.mobile-nav.active a:nth-child(3) { animation-delay: 0.3s; }
+nav.mobile-nav.active a:nth-child(4) { animation-delay: 0.4s; }
+nav.mobile-nav.active a:nth-child(5) { animation-delay: 0.5s; }
+nav.mobile-nav.active a:nth-child(6) { animation-delay: 0.6s; }
+nav.mobile-nav.active a:nth-child(7) { animation-delay: 0.7s; }
+nav.mobile-nav.active a:nth-child(8) { animation-delay: 0.8s; }
+
+/* ====== زر الهامبرجر ====== */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 22px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1300;
+  position: relative;
+}
+
+.menu-toggle span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background:var(--muted) ;
+  border-radius: 3px;
+  transition: all 0.4s ease;
+  transform-origin: center;
+}
+
+/* أنيميشن فتح القائمة لعلامة ✖ */
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* ====== الخلفية (Overlay) ====== */
+
+
+/* ====== موبايل فقط ====== */
+@media (max-width: 768px) {
+  .menu-toggle { display: flex; }
+  nav.desk-nav { display: none; }
+}
+
+/* يظهر للكومبيوتر فقط */
+.desk-only { display: block; }
+
+/* يختفي على الموبايل */
+@media (max-width: 768px) {
+  .desk-only { display: none; }
+}
+
+
+
+.top{
+ 
+  position: fixed;   /* ثابت بالنسبة للنافذة */
+  top: 30px;         /* المسافة من فوق */
+  right: 30px;       /* المسافة من اليمين */
+  z-index: 1500;     /* عشان يفضل فوق كل العناصر */
+
+
+}
+
+    

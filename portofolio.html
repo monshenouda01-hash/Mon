@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Document</title>
+  <title>Mina Shenouda - Projects Portfolio</title>
   <link
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap"
     rel="stylesheet"
@@ -32,7 +32,6 @@
 </head>
 <body>
   <!-- HEADER -->
- <!-- HEADER -->
   <header>
      <!-- LOGO -->
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 70" width="250" height="50">
@@ -48,7 +47,7 @@
 
   <!-- PORTFOLIO -->
   <text x="170" y="55" font-family="Poppins, sans-serif" font-size="38" font-weight="600" 
-     letter-spacing="4" fill=" var(--text)"  style="  text-shadow: 0 0 10px #0ff;">PORTFOLIO</text>
+       letter-spacing="4" fill=" var(--text)"  style="  text-shadow: 0 0 10px #0ff;">PORTFOLIO</text>
 
   <!-- خط تحت -->
   <rect x="170" y="63" width="230" height="3" rx="2" 
@@ -90,38 +89,41 @@
   </nav>
   <div class="overlay"></div>
 
-  <!-- PORTFOLIO -->
+  <!-- PORTFOLIO SECTION -->
   <section id="portfolio" class="fade-in">
     <h2 data-aos="fade-down">Latest <span style="color: var(--accent)">Projects</span></h2>
     <div class="grid">
+      
+      <!-- المشروع الأول: موقع المستشفى (MediCare) -->
       <article class="cardP" data-aos="zoom-in-up" data-aos-delay="200">
         <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=800" />
         <div class="overlay">
-          <h3>Photography</h3>
-          <p>High quality visuals for branding.</p>
+          <h3>MediCare System</h3>
+          <p>Integrated Hospital & Clinic Management Platform with AI Chatbots.</p>
         </div>
-        <span class="badge"><i class="fas fa-eye"></i><a href="https://hospital-api-production-c028.up.railway.app/">View</a></span>
+        <span class="badge"><i class="fas fa-external-link-alt"></i><a href="https://hospital-api-production-c028.up.railway.app/" target="_blank">Live Demo</a></span>
       </article>
 
+       <!-- المشروع الثاني: موقع قصر السلام -->
        <article class="cardP" data-aos="zoom-in-up" data-aos-delay="600">
         <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=800" />
         <div class="overlay">
-          <h3>UI/UX</h3>
-          <p>Interfaces designed for conversion.</p>
+          <h3>Qasr El-Salam</h3>
+          <p>Web Platform featuring Clean UI/UX Design & Optimized User Experience.</p>
         </div>
-        <span class="badge"><i class="fas fa-eye"></i><a href="https://qasr-el-salam.runasp.net/">View</a></span>
+        <span class="badge"><i class="fas fa-external-link-alt"></i><a href="https://qasr-el-salam.runasp.net/" target="_blank">Live Demo</a></span>
       </article>
 
+      <!-- المشروع الثالث: مشروع إضافي أو قوالب أخرى -->
       <article class="cardP" data-aos="zoom-in-up" data-aos-delay="400">
         <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800" />
         <div class="overlay">
-          <h3>Web Design</h3>
-          <p>Modern web designs with UI/UX focus.</p>
+          <h3>Web Applications</h3>
+          <p>Modern responsive web systems built with advanced features.</p>
         </div>
-        <span class="badge"><i class="fas fa-eye"></i><a href="project 3 in portofolio.html">View</a></span>
+        <span class="badge"><i class="fas fa-eye"></i><a href="project 3 in portofolio.html">Explore Project</a></span>
       </article>
 
-     
     </div>
   </section>
 
@@ -131,9 +133,17 @@
     document.addEventListener("DOMContentLoaded", () => {
       // ===== Menu Toggle =====
       const toggleBtn = document.querySelector(".menu-toggle");
-      const navMenu = document.querySelector("nav");
+      const navMenu = document.querySelector(".mobile-nav"); /* تعديل طفيف هنا ليعمل الـ mobile toggle بشكل سليم */
+      const overlay = document.querySelector(".overlay");
+      
       toggleBtn?.addEventListener("click", () => {
         navMenu.classList.toggle("active");
+        overlay?.classList.toggle("active");
+      });
+
+      overlay?.addEventListener("click", () => {
+        navMenu.classList.remove("active");
+        overlay.classList.remove("active");
       });
 
       // ===== Typed Effect =====
@@ -189,7 +199,7 @@
       AOS.init({
         duration: 1000,
         once: true,
-        startEvent: "DOMContentLoaded" // يبدأ أول ما الصفحة تتحمل
+        startEvent: "DOMContentLoaded"
       });
     });
   </script>

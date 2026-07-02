@@ -132,18 +132,31 @@
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       // ===== Menu Toggle =====
-      const toggleBtn = document.querySelector(".menu-toggle");
-      const navMenu = document.querySelector(".mobile-nav"); /* تعديل طفيف هنا ليعمل الـ mobile toggle بشكل سليم */
-      const overlay = document.querySelector(".overlay");
+    const toggleBtn = document.querySelector(".menu-toggle");
+const navMenu = document.querySelector("nav.mobile-nav");
+const overlay = document.querySelector("body > .overlay");
       
       toggleBtn?.addEventListener("click", () => {
-        navMenu.classList.toggle("active");
-        overlay?.classList.toggle("active");
-      });
+  navMenu.classList.toggle("active");
+  toggleBtn.classList.toggle("active");   // ← السطر الجديد
+  overlay?.classList.toggle("active");
+});
 
       overlay?.addEventListener("click", () => {
         navMenu.classList.remove("active");
         overlay.classList.remove("active");
+      });
+
+      // ===== Active Link Highlight =====
+      const currentPage = decodeURIComponent(
+        window.location.pathname.split("/").pop()
+      ) || "index.html";
+
+      document.querySelectorAll(".desk-nav a, .mobile-nav a").forEach((link) => {
+        const linkPage = decodeURIComponent(link.getAttribute("href") || "");
+        if (linkPage === currentPage) {
+          link.classList.add("active");
+        }
       });
 
       // ===== Typed Effect =====
@@ -203,6 +216,5 @@
       });
     });
   </script>
-  <script src="333.js"></script>
 </body>
 </html>

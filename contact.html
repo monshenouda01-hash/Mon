@@ -3,45 +3,260 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-   <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap"
-      rel="stylesheet"
-    />
+    <title>Contact — Mina Shenouda</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet" />
     <!-- AOS CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link rel="stylesheet" href="00.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+      /* ================= CONTACT PAGE — MINIMALIST PROFESSIONAL ================= */
+      #contact {
+        padding: 50px 20px 70px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 75vh;
+        width: 100%;
+      }
+
+      .contact-wrap {
+        width: 100%;
+        max-width: 860px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .contact-head {
+        text-align: center;
+        margin-bottom: 28px;
+      }
+
+      .contact-head .eyebrow {
+        display: inline-block;
+        font-family: monospace;
+        letter-spacing: 3px;
+        font-size: 12px;
+        color: #0ff;
+        border: 1px solid rgba(0, 255, 255, 0.25);
+        padding: 4px 14px;
+        border-radius: 30px;
+        margin-bottom: 10px;
+        background: rgba(0, 255, 255, 0.04);
+      }
+
+      .contact-head h2 {
+        font-family: "Poppins", sans-serif;
+        font-weight: 700;
+        font-size: clamp(26px, 3.5vw, 38px);
+        color: var(--text);
+        margin: 0 0 8px;
+      }
+
+      .contact-head .sub {
+        color: #b9b9b9;
+        max-width: 540px;
+        margin: 0 auto;
+        line-height: 1.7;
+        font-size: 15px;
+      }
+
+      /* Main Professional Card */
+      .contact-card {
+        position: relative;
+        background: linear-gradient(160deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
+        border: 1px solid rgba(0,255,255,0.12);
+        border-radius: 20px;
+        padding: 32px 32px 28px;
+        backdrop-filter: blur(16px);
+        box-shadow: 0 15px 45px rgba(0,0,0,0.4);
+        overflow: hidden;
+        width: 100%;
+        transition: border-color 0.4s ease, box-shadow 0.4s ease;
+      }
+
+      .contact-card:hover {
+        border-color: rgba(0,255,255,0.25);
+        box-shadow: 0 20px 50px rgba(0, 255, 255, 0.05);
+      }
+
+      .contact-card::before {
+        content: "";
+        position: absolute;
+        top: -80px;
+        right: -80px;
+        width: 200px;
+        height: 200px;
+        background: radial-gradient(circle, rgba(0,255,255,0.18), transparent 70%);
+        filter: blur(15px);
+        pointer-events: none;
+      }
+
+      /* Grid of contact methods */
+      .contact-methods {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 16px;
+        margin-bottom: 24px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .method-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+        padding: 22px 16px;
+        border-radius: 14px;
+        border: 1px solid rgba(255,255,255,0.05);
+        background: rgba(255,255,255,0.02);
+        text-decoration: none;
+        transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), border-color 0.3s ease, background 0.3s ease;
+      }
+
+      .method-card:hover {
+        transform: translateY(-4px);
+        border-color: rgba(0,255,255,0.4);
+        background: rgba(0,255,255,0.04);
+      }
+
+      .method-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        background: rgba(0,255,255,0.08);
+        color: #0ff;
+        box-shadow: 0 0 0 1px rgba(0,255,255,0.15) inset;
+      }
+
+      .method-card.whatsapp .method-icon {
+        background: rgba(37, 211, 102, 0.08);
+        color: #25D366;
+        box-shadow: 0 0 0 1px rgba(37, 211, 102, 0.2) inset;
+      }
+
+      .method-title {
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        font-size: 14px;
+        color: var(--text);
+      }
+
+      .method-value {
+        font-size: 13px;
+        color: #a0a0a0;
+        word-break: break-word;
+        direction: ltr;
+      }
+
+      /* Primary CTA Button */
+      .contact-cta {
+        text-align: center;
+        position: relative;
+        z-index: 1;
+      }
+
+      .whatsapp-btn {
+        background: linear-gradient(135deg, #25D366, #1ebe5a);
+        color: #fff !important;
+        padding: 14px 30px;
+        font-size: 15px;
+        font-weight: 600;
+        font-family: "Poppins", sans-serif;
+        border-radius: 50px;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        box-shadow: 0 6px 20px rgba(37, 211, 102, 0.25);
+        transition: transform 0.3s, box-shadow 0.3s;
+        border: none;
+        cursor: pointer;
+      }
+
+      .whatsapp-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+      }
+
+      /* Socials Footer Section */
+      .socials {
+        display: flex;
+        justify-content: center;
+        gap: 14px;
+        margin-top: 24px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .socials a {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgba(255,255,255,0.08);
+        color: var(--text);
+        text-decoration: none;
+        font-size: 15px;
+        transition: all 0.3s ease;
+      }
+
+      .socials a:hover {
+        border-color: #0ff;
+        color: #0ff;
+        background: rgba(0,255,255,0.06);
+        transform: translateY(-3px);
+      }
+
+      @media (max-width: 560px) {
+        .contact-card {
+          padding: 24px 20px;
+        }
+        .contact-methods {
+          grid-template-columns: 1fr;
+          gap: 12px;
+        }
+      }
+
+      /* ===== NAV STYLING FOR CONTACT (NEON BLUE EFFECT) ===== */
+      .desk-nav a:hover,
+      .mobile-nav a:hover {
+        color: #0ff !important;
+        text-shadow: 0 0 8px rgba(0, 255, 255, 0.6);
+      }
+
+      .desk-nav a[href="contact.html"],
+      .mobile-nav a[href="contact.html"] {
+        color: #0ff !important;
+        font-weight: 600;
+        text-shadow: 0 0 8px rgba(0, 255, 255, 0.6);
+      }
+    </style>
 </head>
 <body>
 
- <!-- HEADER -->
+  <!-- HEADER -->
   <header>
-      <!-- LOGO -->
+    <!-- LOGO -->
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 70" width="250" height="50">
-  <!-- <MS/> -->
-  <text x="-3" y="55" font-family="monospace" font-size="58" font-weight="700" 
-        fill="#0ff"   opacity="7" style="text-shadow: 0 0 1px #0ff;">&lt;</text>
-
-  <text x="30" y="55" font-family="monospace" font-size="54" font-weight="700" 
-      fill=" var(--text)"    opacity="3" style="   text-shadow: 0 0 8px #0ff;">MS</text>
-
-  <text x="90" y="55" font-family="monospace" font-size="52" font-weight="700" 
-        fill="#0ff" opacity="7"  style="text-shadow: 0 0 1px #0ff;">/&gt;</text>
-
-  <!-- PORTFOLIO -->
-  <text x="170" y="55" font-family="Poppins, sans-serif" font-size="38" font-weight="600" 
-     letter-spacing="4" fill=" var(--text)"  style="  text-shadow: 0 0 10px #0ff;">PORTFOLIO</text>
-
-  <!-- خط تحت -->
-  <rect x="170" y="63" width="230" height="3" rx="2" 
-        fill="#0ff" opacity="7" style="filter: drop-shadow(0 0 1px #0ff);"/>
-</svg>
+      <text x="-3" y="55" font-family="monospace" font-size="58" font-weight="700" fill="#0ff" opacity="7" style="text-shadow: 0 0 1px #0ff;">&lt;</text>
+      <text x="30" y="55" font-family="monospace" font-size="54" font-weight="700" fill=" var(--text)" opacity="3" style="text-shadow: 0 0 8px #0ff;">MS</text>
+      <text x="90" y="55" font-family="monospace" font-size="52" font-weight="700" fill="#0ff" opacity="7" style="text-shadow: 0 0 1px #0ff;">/&gt;</text>
+      <text x="170" y="55" font-family="Poppins, sans-serif" font-size="38" font-weight="600" letter-spacing="4" fill=" var(--text)" style="text-shadow: 0 0 10px #0ff;">PORTFOLIO</text>
+      <rect x="170" y="63" width="230" height="3" rx="2" fill="#0ff" opacity="7" style="filter: drop-shadow(0 0 1px #0ff);"/>
+    </svg>
     
-    <!-- قائمة الكمبيوتر -->
     <nav class="desk-nav">
       <a href="index.html">Home</a>
       <a href="about me.html">About Me</a>
@@ -52,20 +267,17 @@
       <a href="contact.html">Contact</a>
     </nav>
 
-    <!-- زر القائمة (موبايل) -->
     <button class="menu-toggle">
       <span></span>
       <span></span>
       <span></span>
     </button>
 
-    <!-- زر الثيم -->
-     <button class="theme-toggle desk-only"><i class="fas fa-adjust"></i></button>
+    <button class="theme-toggle desk-only"><i class="fas fa-adjust"></i></button>
   </header>
 
-  <!-- قائمة الموبايل -->
   <nav class="mobile-nav">
-    <button class="theme-toggle  top"><i class="fas fa-adjust"></i></button>
+    <button class="theme-toggle top"><i class="fas fa-adjust"></i></button>
     <a href="index.html">Home</a>
     <a href="about me.html">About Me</a>
     <a href="my skiils.html">My Skills</a>
@@ -76,44 +288,86 @@
   </nav>
   <div class="overlay"></div>
 
+  <!-- CONTACT SECTION -->
+  <section id="contact">
+    <div class="contact-wrap">
 
-   <!-- CONTACT -->
-<section class="contact-container" id="contact">
-  <div class="contact-card" data-aos="zoom-in" data-aos-duration="1200">
-    <h2 data-aos="fade-down">Contact Me</h2>
-    <input type="text" placeholder="Your Name" data-aos="fade-right" data-aos-delay="200">
-    <input type="email" placeholder="Your Email" data-aos="fade-left" data-aos-delay="300">
-    <textarea placeholder="Your Message" data-aos="fade-up" data-aos-delay="400"></textarea>
-    <button data-aos="flip-up" data-aos-delay="500">Send Message</button>
+      <div class="contact-head" data-aos="fade-down">
+        <span class="eyebrow">GET IN TOUCH</span>
+        <h2>Turn Your Vision Into Digital Reality</h2>
+        <p class="sub">
+          جاهز تحول فكرتك لموقع سريع، آمن، وسيستم متفصل بالكامل عشان يكبر البيزنس بتاعك؟ 
+          اختار الطريقة الأنسب ليك تحت، وإن شاء الله هنعمل عظَمة مع بعض.
+        </p>
+      </div>
 
-    <!-- Socials -->
-    <div class="socials" data-aos="fade-up" data-aos-delay="600">
-      <a href="#"><i class="fab fa-facebook-f"></i></a>
-      <a href="#"><i class="fab fa-linkedin-in"></i></a>
-      <a href="#"><i class="fab fa-github"></i></a>
-      <a href="#"><i class="fab fa-twitter"></i></a>
-      <a href="#"><i class="fab fa-whatsapp"></i></a>
+      <div class="contact-card" data-aos="zoom-in" data-aos-duration="1000">
+
+        <!-- طرق التواصل -->
+        <div class="contact-methods">
+          <a href="https://wa.me/201212858582" target="_blank" class="method-card whatsapp" data-aos="fade-up" data-aos-delay="100">
+            <div class="method-icon"><i class="fab fa-whatsapp"></i></div>
+            <div class="method-title">WhatsApp</div>
+            <div class="method-value">+20 121 285 8582</div>
+          </a>
+
+          <a href="mailto:monshenouda01@gmail.com" class="method-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="method-icon"><i class="fas fa-envelope"></i></div>
+            <div class="method-title">Email</div>
+            <div class="method-value">monshenouda01@gmail.com</div>
+          </a>
+
+          <a href="https://www.linkedin.com/in/mina-shenouda-7b002b254" target="_blank" class="method-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="method-icon"><i class="fab fa-linkedin-in"></i></div>
+            <div class="method-title">LinkedIn</div>
+            <div class="method-value">Mina Shenouda</div>
+          </a>
+        </div>
+
+        <!-- CTA الأساسي -->
+        <div class="contact-cta" data-aos="flip-up" data-aos-delay="400">
+          <a href="https://wa.me/201212858582" target="_blank" class="whatsapp-btn">
+            <i class="fab fa-whatsapp" style="font-size: 20px;"></i> Chat on WhatsApp Now
+          </a>
+        </div>
+
+        <!-- Socials -->
+        <div class="socials" data-aos="fade-up" data-aos-delay="500">
+          <a href="https://www.facebook.com/share/1EahEcfzfz/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.linkedin.com/in/mina-shenouda-7b002b254" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="portofolio.html" aria-label="GitHub / Projects"><i class="fab fa-github"></i></a>
+          <a href="https://wa.me/201212858582" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
- <footer style="margin-bottom: 0; ">© 2025 Mina Shenouda — All Rights Reserved</footer>
+  <footer style="margin-bottom: 0;">© 2026 Mina Shenouda — All Rights Reserved</footer>
 
+  <!-- AOS Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+      // ===== Menu Toggle =====
+      const toggleBtn = document.querySelector(".menu-toggle");
+      const navMenu = document.querySelector(".mobile-nav");
+      const overlay = document.querySelector(".overlay");
+      
+      toggleBtn?.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+        overlay.classList.toggle("active");
+      });
+      
+      overlay?.addEventListener("click", () => {
+        navMenu.classList.remove("active");
+        overlay.classList.remove("active");
+      });
 
-<!-- AOS Script -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-     // ===== Menu Toggle =====
-        const toggleBtn = document.querySelector(".menu-toggle");
-        const navMenu = document.querySelector("nav");
-        toggleBtn?.addEventListener("click", () => {
-          navMenu.classList.toggle("active");
-        });
-  AOS.init({
-    duration: 1000,
-    once: true
-  });
-</script>
-<script src="333.js"></script> 
+      AOS.init({
+        duration: 1000,
+        once: true
+      });
+  </script>
+  <script src="333.js"></script> 
 </body>
 </html>

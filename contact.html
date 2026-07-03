@@ -349,26 +349,11 @@
   <!-- AOS Script -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-      // ===== Menu Toggle =====
-      const toggleBtn = document.querySelector(".menu-toggle");
-      const navMenu = document.querySelector(".mobile-nav");
-      const overlay = document.querySelector(".overlay");
-      
-      toggleBtn?.addEventListener("click", () => {
-        navMenu.classList.toggle("active");
-        overlay.classList.toggle("active");
-      });
-      
-      overlay?.addEventListener("click", () => {
-        navMenu.classList.remove("active");
-        overlay.classList.remove("active");
-      });
-
       AOS.init({
         duration: 1000,
         once: true
       });
   </script>
-  <script src="333.js"></script> 
+  <script src="333.js"></script>
 </body>
 </html>

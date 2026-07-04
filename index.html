@@ -63,6 +63,7 @@
       <span></span>
       <span></span>
       <span></span>
+      <span class="menu-hint-bubble">more<br>pages</span>
     </button>
 
     <!-- زر الثيم -->
@@ -106,7 +107,7 @@
       const phrases = [
         "Web Developer",
         "UI/UX Specialist.",
-        "Problem Solver.",
+        "Problem Solver.",
         "Product builder"
       ];
       const typedEl = document.getElementById("typed");
@@ -137,7 +138,25 @@
       AOS.init({ duration: 1000, once: true });
 
       // ===== القائمة (موبايل) =====
-    
+      const toggleBtn = document.querySelector(".menu-toggle");
+      const hintBubble = document.querySelector(".menu-hint-bubble");
+
+      // إظهار رسالة "more / pages" بعد 10 ثواني من دخول الموقع
+      let hintHideTimeout;
+      const hintTimeout = setTimeout(() => {
+        if (toggleBtn && !toggleBtn.classList.contains("active")) {
+          hintBubble?.classList.add("show");
+          hintHideTimeout = setTimeout(() => {
+            hintBubble?.classList.remove("show");
+          }, 6000);
+        }
+      }, 10000);
+
+      toggleBtn?.addEventListener("click", () => {
+        hintBubble?.classList.remove("show");
+        clearTimeout(hintTimeout);
+        clearTimeout(hintHideTimeout);
+      });
 
       // ===== زر تغيير الثيم =====
       const themeBtn = document.querySelector(".theme-toggle");

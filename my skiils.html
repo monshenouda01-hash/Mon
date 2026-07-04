@@ -123,6 +123,7 @@
       <span></span>
       <span></span>
       <span></span>
+      <span class="menu-hint-bubble">more<br>pages</span>
     </button>
 
     <!-- زر الثيم -->
@@ -262,8 +263,24 @@
         // ===== Menu Toggle =====
         const toggleBtn = document.querySelector(".menu-toggle");
         const navMenu = document.querySelector("nav");
+        const hintBubble = document.querySelector(".menu-hint-bubble");
+
+        // إظهار رسالة "more / pages" بعد 10 ثواني من دخول الموقع
+        let hintHideTimeout;
+        const hintTimeout = setTimeout(() => {
+          if (toggleBtn && !toggleBtn.classList.contains("active")) {
+            hintBubble?.classList.add("show");
+            hintHideTimeout = setTimeout(() => {
+              hintBubble?.classList.remove("show");
+            }, 6000);
+          }
+        }, 10000);
+
         toggleBtn?.addEventListener("click", () => {
           navMenu.classList.toggle("active");
+          hintBubble?.classList.remove("show");
+          clearTimeout(hintTimeout);
+          clearTimeout(hintHideTimeout);
         });
 
         

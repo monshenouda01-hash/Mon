@@ -270,6 +270,7 @@
       <span></span>
       <span></span>
       <span></span>
+      <span class="menu-hint-bubble">more<br>pages</span>
     </button>
 
     <button class="theme-toggle desk-only"><i class="fas fa-adjust"></i></button>
@@ -352,6 +353,27 @@
       AOS.init({
         duration: 1000,
         once: true
+      });
+
+      // ===== "more / pages" Hint Bubble =====
+      // بس توقيت البابل من غير أي toggle، عشان 333.js يفضل هو المسؤول عن فتح/قفل المنيو
+      const menuToggleBtn = document.querySelector(".menu-toggle");
+      const hintBubble = document.querySelector(".menu-hint-bubble");
+
+      let hintHideTimeout;
+      const hintTimeout = setTimeout(() => {
+        if (menuToggleBtn && !menuToggleBtn.classList.contains("active")) {
+          hintBubble?.classList.add("show");
+          hintHideTimeout = setTimeout(() => {
+            hintBubble?.classList.remove("show");
+          }, 6000);
+        }
+      }, 10000);
+
+      menuToggleBtn?.addEventListener("click", () => {
+        hintBubble?.classList.remove("show");
+        clearTimeout(hintTimeout);
+        clearTimeout(hintHideTimeout);
       });
   </script>
   <script src="333.js"></script>

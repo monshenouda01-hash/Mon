@@ -70,6 +70,7 @@
       <span></span>
       <span></span>
       <span></span>
+      <span class="menu-hint-bubble">more<br>pages</span>
     </button>
 
     <!-- زر الثيم -->
@@ -134,6 +135,27 @@
       // ===== Menu Toggle =====
       // (تم شيل الكود من هنا: 333.js هو المسؤول الوحيد عن فتح/قفل منيو الموبايل
       // عشان يمنع تضارب الـ toggle المزدوج اللي كان بيلغي نفسه)
+
+      // ===== "more / pages" Hint Bubble =====
+      // بابل بس هنا (بدون أي toggle) عشان مانضربش في 333.js
+      const menuToggleBtn = document.querySelector(".menu-toggle");
+      const hintBubble = document.querySelector(".menu-hint-bubble");
+
+      let hintHideTimeout;
+      const hintTimeout = setTimeout(() => {
+        if (menuToggleBtn && !menuToggleBtn.classList.contains("active")) {
+          hintBubble?.classList.add("show");
+          hintHideTimeout = setTimeout(() => {
+            hintBubble?.classList.remove("show");
+          }, 6000);
+        }
+      }, 10000);
+
+      menuToggleBtn?.addEventListener("click", () => {
+        hintBubble?.classList.remove("show");
+        clearTimeout(hintTimeout);
+        clearTimeout(hintHideTimeout);
+      });
 
       // ===== Active Link Highlight =====
       const currentPage = decodeURIComponent(

@@ -96,7 +96,7 @@
       
       <!-- المشروع الأول: موقع المستشفى (MediCare) -->
       <article class="cardP" data-aos="zoom-in-up" data-aos-delay="200">
-        <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=800" />
+        <img src="screencapture-127-0-0-1-8000-contact-2026-06-25-17_53_21.png" />
         <div class="overlay">
           <h3>MediCare System</h3>
           <p>Integrated Hospital & Clinic Management Platform with AI Chatbots.</p>
@@ -106,7 +106,7 @@
 
        <!-- المشروع الثاني: موقع قصر السلام -->
        <article class="cardP" data-aos="zoom-in-up" data-aos-delay="600">
-        <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=800" />
+        <img src="screencapture-qasr-el-salam-runasp-net-2026-07-04-14_14_15.png" />
         <div class="overlay">
           <h3>Qasr El-Salam</h3>
           <p>Web Platform featuring Clean UI/UX Design & Optimized User Experience.</p>
@@ -116,12 +116,12 @@
 
       <!-- المشروع الثالث: مشروع إضافي أو قوالب أخرى -->
       <article class="cardP" data-aos="zoom-in-up" data-aos-delay="400">
-        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800" />
+        <img src="screencapture-127-0-0-1-5000-2026-07-03-17_29_21.png" />
         <div class="overlay">
           <h3>Web Applications</h3>
-          <p>Modern responsive web systems built with advanced features.</p>
+          <p>Helping learners follow structured programming roadmaps and achieve their career goals. ⭐</p>
         </div>
-        <span class="badge"><i class="fas fa-eye"></i><a href="project 3 in portofolio.html">Explore Project</a></span>
+        <span class="badge"><i class="fas fa-eye"></i><a href="https://mon22.pythonanywhere.com">Explore Project</a></span>
       </article>
 
     </div>
@@ -132,20 +132,8 @@
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       // ===== Menu Toggle =====
-    const toggleBtn = document.querySelector(".menu-toggle");
-const navMenu = document.querySelector("nav.mobile-nav");
-const overlay = document.querySelector("body > .overlay");
-      
-      toggleBtn?.addEventListener("click", () => {
-  navMenu.classList.toggle("active");
-  toggleBtn.classList.toggle("active");   // ← السطر الجديد
-  overlay?.classList.toggle("active");
-});
-
-      overlay?.addEventListener("click", () => {
-        navMenu.classList.remove("active");
-        overlay.classList.remove("active");
-      });
+      // (تم شيل الكود من هنا: 333.js هو المسؤول الوحيد عن فتح/قفل منيو الموبايل
+      // عشان يمنع تضارب الـ toggle المزدوج اللي كان بيلغي نفسه)
 
       // ===== Active Link Highlight =====
       const currentPage = decodeURIComponent(
@@ -216,5 +204,6 @@ const overlay = document.querySelector("body > .overlay");
       });
     });
   </script>
+  <script src="333.js"></script>
 </body>
 </html>

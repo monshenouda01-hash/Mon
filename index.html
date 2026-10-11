@@ -1,227 +1,214 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mina Shenouda</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap"
-      rel="stylesheet"
-    />
-    <!-- AOS CSS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <link rel="stylesheet" href="00.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
-  </head>
-  <body>
-    <!-- HEADER -->
-    <!-- HEADER -->
-    <header>
-      <!-- LOGO -->
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 420 70"
-        width="250"
-        height="50"
-      >
-        <!-- <MS/> -->
-        <text
-          class="font"
-          x="-3"
-          y="55"
-          font-family="monospace"
-          font-size="58"
-          font-weight="700"
-          fill="#0ff"
-          opacity="7"
-          style="text-shadow: 0 0 1px #0ff"
-        >
-          &lt;
-        </text>
+<!DOCTYPE html>
 
-        <text
-          x="30"
-          y="55"
-          font-family="monospace"
-          font-size="54"
-          font-weight="700"
-          fill=" var(--text)"
-          opacity="3"
-          style="text-shadow: 0 0 8px #0ff"
-        >
-          MS
-        </text>
-
-        <text
-          x="90"
-          y="55"
-          font-family="monospace"
-          font-size="52"
-          font-weight="700"
-          fill="#0ff"
-          opacity="7"
-          style="text-shadow: 0 0 1px #0ff"
-        >
-          /&gt;
-        </text>
-
-        <!-- PORTFOLIO -->
-        <text
-          x="170"
-          y="55"
-          font-family="Poppins, sans-serif"
-          font-size="38"
-          font-weight="600"
-          letter-spacing="4"
-          fill=" var(--text)"
-          style="text-shadow: 0 0 10px #0ff"
-        >
-          PORTFOLIO
-        </text>
-
-        <!-- خط تحت -->
-        <rect
-          x="170"
-          y="63"
-          width="230"
-          height="3"
-          rx="2"
-          fill="#0ff"
-          opacity="7"
-          style="filter: drop-shadow(0 0 1px #0ff)"
-        />
-      </svg>
-
-      <!-- قائمة الكمبيوتر -->
-      <nav class="desk-nav">
-        <a href="index.html">Home</a>
-        <a href="about me.html">About Me</a>
-        <a href="my skiils.html">My Skills</a>
-        <a href="sevices.html">Services</a>
-        <a href="portofolio.html">Portfolio</a>
-        <a href="certificates.html">Certificates</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-
-      <!-- زر القائمة (موبايل) -->
-      <button class="menu-toggle">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span class="menu-hint-bubble">more<br />pages</span>
-      </button>
-
-      <!-- زر الثيم -->
-      <button class="theme-toggle desk-only">
-        <i class="fas fa-adjust"></i>
-      </button>
-    </header>
-
-    <!-- قائمة الموبايل -->
-    <nav class="mobile-nav">
-      <button class="theme-toggle top"><i class="fas fa-adjust"></i></button>
-      <a href="index.html" class="active">Home</a>
-      <a href="about me.html">About Me</a>
-      <a href="my skiils.html">My Skills</a>
-      <a href="sevices.html">Services</a>
-      <a href="portofolio.html">Portfolio</a>
-      <a href="certificates.html">Certificates</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-    <div class="overlay"></div>
-
-    <!-- HERO -->
-    <section class="hero" id="home">
-      <div class="hero-text">
-        <h1>Hi, I'm <span>Mina Shenouda</span></h1>
-        <h3>And I'm a <span id="typed"></span></h3>
-        <p>A passionate Web Developer creating modern & responsive designs.</p>
-        <a href="contact.html" class="btn">Contact Me</a>
-        <a href="Mina_Shenouda_CV_OnePage2.pdf" class="btn btn-outline"
-          >Download CV</a
-        >
-      </div>
-      <div class="shadoimg">
-        <div class="hero-img">
-          <img
-            src="WhatsApp Image 2026-07-01 at 4.11.29 PM.jpeg"
-            alt="Profile"
-          />
-        </div>
-      </div>
-    </section>
-
-    <!-- AOS JS -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        // ===== Typed Effect =====
-        const phrases = [
-          "Web Developer",
-          "UI/UX Specialist.",
-          "Problem Solver.",
-          "Product builder",
-        ];
-        const typedEl = document.getElementById("typed");
-        let phraseIndex = 0,
-          charIndex = 0,
-          deleting = false;
-
-        function typeEffect() {
-          if (!typedEl) return;
-          const current = phrases[phraseIndex];
-          if (!deleting) {
-            typedEl.textContent = current.slice(0, ++charIndex);
-            if (charIndex === current.length) {
-              deleting = true;
-              setTimeout(typeEffect, 1200);
-              return;
-            }
-          } else {
-            typedEl.textContent = current.slice(0, --charIndex);
-            if (charIndex === 0) {
-              deleting = false;
-              phraseIndex = (phraseIndex + 1) % phrases.length;
-            }
-          }
-          setTimeout(typeEffect, deleting ? 60 : 90);
-        }
-        typeEffect();
-
-        // ===== AOS Initialization =====
-        AOS.init({ duration: 1000, once: true });
-
-        // ===== القائمة (موبايل) =====
-        const toggleBtn = document.querySelector(".menu-toggle");
-        const hintBubble = document.querySelector(".menu-hint-bubble");
-
-        // إظهار رسالة "more / pages" بعد 10 ثواني من دخول الموقع
-        let hintHideTimeout;
-        const hintTimeout = setTimeout(() => {
-          if (toggleBtn && !toggleBtn.classList.contains("active")) {
-            hintBubble?.classList.add("show");
-            hintHideTimeout = setTimeout(() => {
-              hintBubble?.classList.remove("show");
-            }, 6000);
-          }
-        }, 10000);
-
-        toggleBtn?.addEventListener("click", () => {
-          hintBubble?.classList.remove("show");
-          clearTimeout(hintTimeout);
-          clearTimeout(hintHideTimeout);
-        });
-
-        // ===== زر تغيير الثيم =====
-        const themeBtn = document.querySelector(".theme-toggle");
-        themeBtn.addEventListener("click", () => {
-          document.body.classList.toggle("light");
-        });
-      });
-    </script>
-    <script src="333.js"></script>
-  </body>
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Mina Shenouda | Freelance Full Stack Web Developer</title>
+<meta content="Mina Shenouda - freelance full-stack web developer. Custom websites, web systems, mobile apps and IoT solutions built with Laravel, Python, Flutter and more. Available for new projects." name="description"/>
+<meta content="#0d0e12" name="theme-color"/>
+<meta content="website" property="og:type"/>
+<meta content="Mina Shenouda | Freelance Full Stack Web Developer" property="og:title"/>
+<meta content="Custom websites, web systems, mobile apps and IoT solutions. Available for freelance projects." property="og:description"/>
+<meta content="assets/img/profile-hero.jpg" property="og:image"/>
+<meta content="Portrait of Mina Shenouda" property="og:image:alt"/>
+<meta content="Mina Shenouda" property="og:site_name"/>
+<meta content="assets/img/profile-hero.jpg" name="twitter:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Mina Shenouda | Freelance Full Stack Web Developer" name="twitter:title"/>
+<meta content="Custom websites, web systems, mobile apps and IoT solutions. Available for freelance projects." name="twitter:description"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Mina Shenouda","jobTitle":"Freelance Full Stack Web Developer","email":"mailto:monshenouda01@gmail.com","telephone":"+201212858582","sameAs":["https://www.linkedin.com/in/mina-shenouda-7b002b254","https://www.facebook.com/share/1EahEcfzfz/"],"knowsAbout":["Laravel","PHP","Python","Flask","JavaScript","React","Node.js","MySQL","Flutter","Arduino"]}</script>
+<link href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2064%2064%27%3E%3Crect%20width%3D%2764%27%20height%3D%2764%27%20rx%3D%2716%27%20fill%3D%27%230d0e12%27/%3E%3Ctext%20x%3D%2732%27%20y%3D%2741%27%20font-size%3D%2724%27%20font-family%3D%27monospace%27%20font-weight%3D%27700%27%20text-anchor%3D%27middle%27%20fill%3D%27%23f0b35a%27%3EMS%3C/text%3E%3C/svg%3E" rel="icon"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Inter+Tight:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="style.css" rel="stylesheet"/>
+<script>try{document.documentElement.dataset.theme=localStorage.getItem("theme")||"dark"}catch(e){}</script><script>try{var l=localStorage.getItem("lang");if(l!=="ar"&&l!=="en")l=/^ar/i.test(navigator.language||"")?"ar":"en";var r=document.documentElement;r.lang=l;r.dir=l==="ar"?"rtl":"ltr";window.__arFonts=function(){if(document.getElementById("ar-fonts"))return;var k=document.createElement("link");k.id="ar-fonts";k.rel="stylesheet";k.href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap";document.head.appendChild(k)};if(l==="ar")window.__arFonts()}catch(e){}</script>
+<noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
+</head>
+<body>
+<svg aria-hidden="true" height="0" style="position:absolute" width="0"><defs>
+<symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></symbol>
+<symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></symbol>
+<symbol id="i-arrow-ur" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"></path></symbol>
+<symbol id="i-arrow-r" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></symbol>
+<symbol id="i-up" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"></path></symbol>
+<symbol id="i-mail" viewBox="0 0 24 24"><rect height="14" rx="2" width="18" x="3" y="5"></rect><path d="m3 7 9 6 9-6"></path></symbol>
+<symbol id="i-dl" viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M4 21h16"></path></symbol>
+<symbol id="i-in" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"></path><circle cx="4" cy="4" r="2"></circle></symbol>
+<symbol id="i-fb" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></symbol>
+<symbol id="i-wa" viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.6A8.4 8.4 0 1 1 21 11.5z"></path></symbol>
+<symbol id="i-monitor" viewBox="0 0 24 24"><rect height="12" rx="2" width="18" x="3" y="4"></rect><path d="M8 20h8M12 16v4"></path></symbol>
+<symbol id="i-code" viewBox="0 0 24 24"><path d="m8 8-5 4 5 4M16 8l5 4-5 4M14 5l-4 14"></path></symbol>
+<symbol id="i-layout" viewBox="0 0 24 24"><rect height="18" rx="2" width="18" x="3" y="3"></rect><path d="M3 9h18M9 21V9"></path></symbol>
+<symbol id="i-phone" viewBox="0 0 24 24"><rect height="20" rx="2" width="10" x="7" y="2"></rect><path d="M11 18h2"></path></symbol>
+<symbol id="i-chip" viewBox="0 0 24 24"><rect height="12" rx="2" width="12" x="6" y="6"></rect><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"></path></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"></path></symbol>
+</defs></svg>
+<div id="progress"></div>
+<a class="skip" data-i18n="k001" href="#main">Skip to content</a>
+<header class="site-header">
+<a aria-label="Mina Shenouda - back to top" class="logo" data-i18n-attr="aria-label:k194" href="#home"><span class="mark" data-i18n="k002">MS</span><span class="logo-name" data-i18n="k003">Mina Shenouda</span></a>
+<nav aria-label="Main" class="desk-nav" data-i18n-attr="aria-label:k195"><a data-i18n="k004" href="#services">Services</a><a data-i18n="k005" href="#projects">Work</a><a data-i18n="k006" href="#process">Process</a><a data-i18n="k007" href="#about">About</a><a data-i18n="k008" href="#contact">Contact</a></nav>
+<div class="hdr-actions">
+<a class="btn btn-sm hire" data-i18n="k009" href="#contact">Hire me</a>
+<div class="lang-switch" role="group" aria-label="Language"><button type="button" data-lang="en" lang="en" aria-pressed="true">EN</button><button type="button" data-lang="ar" lang="ar" aria-pressed="false">عربي</button></div><button aria-label="Toggle light/dark theme" class="theme-btn" data-i18n-attr="aria-label:k196" type="button"><svg aria-hidden="true" class="ic i-sun"><use href="#i-sun"></use></svg><svg aria-hidden="true" class="ic i-moon"><use href="#i-moon"></use></svg></button>
+<button aria-controls="drawer" aria-expanded="false" aria-label="Menu" class="menu-btn" data-i18n-attr="aria-label:k197" type="button"><span></span><span></span><span></span></button>
+</div>
+</header>
+<nav aria-label="Mobile" class="drawer" data-i18n-attr="aria-label:k198" id="drawer"><a data-i18n="k010" href="#home">Home</a><a data-i18n="k011" href="#services">Services</a><a data-i18n="k012" href="#projects">Work</a><a data-i18n="k013" href="#process">Process</a><a data-i18n="k014" href="#about">About</a><a data-i18n="k015" href="#contact">Contact</a></nav>
+<div class="scrim"></div>
+<main id="main">
+<!-- ============ HERO ============ -->
+<section class="hero" id="home">
+<div class="wrap hero-grid">
+<div class="hero-copy reveal">
+<span class="avail"><i></i><span data-i18n="k016">Available for freelance projects</span></span>
+<h1 data-i18n="k017">I build fast, custom <em>websites</em> &amp; systems that grow your business.</h1>
+<p class="lead" data-i18n="k018">Hi, I'm Mina Shenouda, a full-stack web developer. From business websites to full management systems, I design and build clean, responsive products you can launch and rely on.</p>
+<div class="row cta">
+<a class="btn btn-lg" href="#contact"><span data-i18n="k019">Start a project</span> <svg aria-hidden="true" class="ic flip"><use href="#i-arrow-r"></use></svg></a>
+<a class="btn btn-ghost btn-lg" data-i18n="k020" href="#projects">See my work</a>
+</div>
+<div class="row sub">
+<a class="textlink" download="" href="assets/docs/Mina_Shenouda_CV.pdf"><svg aria-hidden="true" class="ic"><use href="#i-dl"></use></svg> <span data-i18n="k021">Download CV</span></a>
+<div class="soc"><a aria-label="WhatsApp" data-i18n-attr="aria-label:k199" href="https://wa.me/201212858582" rel="noopener" target="_blank"><svg aria-hidden="true" class="ic"><use href="#i-wa"></use></svg></a><a aria-label="LinkedIn" data-i18n-attr="aria-label:k200" href="https://www.linkedin.com/in/mina-shenouda-7b002b254" rel="noopener" target="_blank"><svg aria-hidden="true" class="ic"><use href="#i-in"></use></svg></a><a aria-label="Facebook" data-i18n-attr="aria-label:k201" href="https://www.facebook.com/share/1EahEcfzfz/" rel="noopener" target="_blank"><svg aria-hidden="true" class="ic"><use href="#i-fb"></use></svg></a></div>
+</div>
+</div>
+<div class="portrait reveal"><img alt="Portrait of Mina Shenouda" data-i18n-attr="alt:k202" height="700" src="assets/img/profile-hero.jpg" width="700"/><div class="stack-card"><small data-i18n="k028">Hands-on with</small><span data-i18n="k029">Laravel · Python · Flutter · Arduino</span></div></div>
+</div>
+<div class="wrap"><div class="stats"><div><b data-i18n="k022">3</b><span data-i18n="k023">Live projects</span></div><div><b data-i18n="k024">4</b><span data-i18n="k025">Certificates</span></div><div><b data-i18n="k026">9</b><span data-i18n="k027">Technologies in my stack</span></div></div></div>
+</section>
+<div aria-label="Technologies" class="strip" data-i18n-attr="aria-label:k203"><div class="marquee"><div class="track"><span data-i18n="k030">Laravel</span><span data-i18n="k031">PHP</span><span data-i18n="k032">MySQL</span><span data-i18n="k033">JavaScript</span><span data-i18n="k034">React</span><span data-i18n="k035">Node.js</span><span data-i18n="k036">Python</span><span data-i18n="k037">Flutter</span><span data-i18n="k038">Arduino</span></div></div></div>
+<!-- ============ SERVICES ============ -->
+<section class="section" id="services">
+<div class="wrap">
+<div class="sec-head reveal"><span class="kicker" data-i18n="k039">01 — Services</span><h2 data-i18n="k040">What I can build <em>for you</em></h2><p class="sec-sub" data-i18n="k041">Pick a single service or combine them. Every project starts with a conversation about what you actually need.</p></div>
+<div class="services" data-stagger="">
+<article class="svc reveal"><span class="svc-ic"><svg aria-hidden="true" class="ic"><use href="#i-monitor"></use></svg></span><h3 data-i18n="k042">Web design</h3><p data-i18n="k043">Modern, branded websites for businesses, clinics, portfolios and landing pages that make a strong first impression.</p></article>
+<article class="svc reveal"><span class="svc-ic"><svg aria-hidden="true" class="ic"><use href="#i-code"></use></svg></span><h3 data-i18n="k044">Full-stack development</h3><p data-i18n="k045">Custom web systems with Laravel, Node.js and MySQL: dashboards, booking and management platforms, admin panels and APIs.</p></article>
+<article class="svc reveal"><span class="svc-ic"><svg aria-hidden="true" class="ic"><use href="#i-layout"></use></svg></span><h3 data-i18n="k046">Responsive UI/UX</h3><p data-i18n="k047">Clear, easy-to-use interfaces that look right and work smoothly on phones, tablets and desktops.</p></article>
+<article class="svc reveal"><span class="svc-ic"><svg aria-hidden="true" class="ic"><use href="#i-phone"></use></svg></span><h3 data-i18n="k048">Mobile apps</h3><p data-i18n="k049">Cross-platform mobile apps with Flutter and Dart, from a simple idea to a working app.</p></article>
+<article class="svc reveal"><span class="svc-ic"><svg aria-hidden="true" class="ic"><use href="#i-chip"></use></svg></span><h3 data-i18n="k050">IoT solutions</h3><p data-i18n="k051">Connected hardware and automation projects using Arduino, linked to a web or mobile interface.</p></article>
+</div>
+</div>
+</section>
+<!-- ============ PROJECTS ============ -->
+<section class="section alt" id="projects">
+<div class="wrap">
+<div class="sec-head reveal"><span class="kicker" data-i18n="k052">02 — Selected work</span><h2 data-i18n="k053">Real projects, <em>live online</em></h2><p class="sec-sub" data-i18n="k054">Open any of them and click around. Each one is running right now.</p></div>
+<article class="project">
+<div class="devices reveal"><a aria-label="Open MediCare System" class="shot" data-i18n-attr="aria-label:k204" href="http://hospital-mina.infinityfreeapp.com/" rel="noopener" target="_blank"><span class="live-badge"><i></i><span data-i18n="k215">Live</span></span><img alt="MediCare System shown on a laptop and a phone" data-i18n-attr="alt:k205" height="1110" loading="lazy" src="assets/img/project-medicare.webp" width="2000"/></a></div>
+<div class="p-info reveal"><span class="pnum" data-i18n="k055">01</span><span class="kicker" data-i18n="k056">Healthcare · Web system</span><h3 data-i18n="k057">MediCare System</h3><p data-i18n="k058">An integrated hospital management system with AI chatbots. It handles doctor and patient records, appointment booking, medical reports, hospital services and doctor ratings in one place.</p>
+<ul class="tags"><li data-i18n="k059">Laravel</li><li data-i18n="k060">Tailwind CSS</li><li data-i18n="k061">Vite</li><li data-i18n="k062">MySQL</li><li data-i18n="k063">AI chatbots</li></ul>
+<div class="row"><a class="btn" href="http://hospital-mina.infinityfreeapp.com/" rel="noopener" target="_blank"><span data-i18n="k064">Live demo</span> <svg aria-hidden="true" class="ic flip"><use href="#i-arrow-ur"></use></svg></a><a class="textlink ask" data-i18n="k065" data-project="MediCare System" href="#contact">Want something like this?</a></div></div>
+</article>
+<article class="project">
+<div class="devices reveal"><a aria-label="Open Qasr El-Salam" class="shot" data-i18n-attr="aria-label:k206" href="https://qasr-el-salam.runasp.net/" rel="noopener" target="_blank"><span class="live-badge"><i></i><span data-i18n="k215">Live</span></span><img alt="Qasr El-Salam restaurant website shown on a laptop and a phone" data-i18n-attr="alt:k207" height="1110" loading="lazy" src="assets/img/project-qasr-el-salam.webp" width="2000"/></a></div>
+<div class="p-info reveal"><span class="pnum" data-i18n="k066">02</span><span class="kicker" data-i18n="k067">Restaurant · Responsive website</span><h3 data-i18n="k068">Qasr El-Salam</h3><p data-i18n="k069">A restaurant website that shows the menu and signature dishes, tells the restaurant's story, and gives visitors a clear, appetizing first impression on any screen.</p>
+<ul class="tags"><li data-i18n="k070">HTML5</li><li data-i18n="k071">CSS3</li><li data-i18n="k072">Bootstrap</li><li data-i18n="k073">JavaScript</li><li data-i18n="k074">UI/UX design</li></ul>
+<div class="row"><a class="btn" href="https://qasr-el-salam.runasp.net/" rel="noopener" target="_blank"><span data-i18n="k075">Live demo</span> <svg aria-hidden="true" class="ic flip"><use href="#i-arrow-ur"></use></svg></a><a class="textlink ask" data-i18n="k076" data-project="Qasr El-Salam" href="#contact">Want something like this?</a></div></div>
+</article>
+<article class="project">
+<div class="devices reveal"><a aria-label="Open Programming Roadmaps" class="shot" data-i18n-attr="aria-label:k208" href="https://mon22.pythonanywhere.com" rel="noopener" target="_blank"><span class="live-badge"><i></i><span data-i18n="k215">Live</span></span><img alt="Programming Roadmaps (DevPath) website shown on a laptop" data-i18n-attr="alt:k209" height="1110" loading="lazy" src="assets/img/project-roadmaps.webp" width="2000"/></a></div>
+<div class="p-info reveal"><span class="pnum" data-i18n="k077">03</span><span class="kicker" data-i18n="k078">Education · Web application</span><h3 data-i18n="k079">Programming Roadmaps</h3><p data-i18n="k080">DevPath is a web app that guides learners through structured programming roadmaps. It includes user sign-up and login, plus admin dashboards to manage roadmaps, content and learning resources.</p>
+<ul class="tags"><li data-i18n="k081">Python</li><li data-i18n="k082">Flask</li><li data-i18n="k083">SQLite</li><li data-i18n="k084">JavaScript</li><li data-i18n="k085">Admin dashboard</li></ul>
+<div class="row"><a class="btn" href="https://mon22.pythonanywhere.com" rel="noopener" target="_blank"><span data-i18n="k086">Explore project</span> <svg aria-hidden="true" class="ic flip"><use href="#i-arrow-ur"></use></svg></a><a class="textlink ask" data-i18n="k087" data-project="Programming Roadmaps" href="#contact">Want something like this?</a></div></div>
+</article>
+</div>
+</section>
+<!-- ============ PROCESS ============ -->
+<section class="section process-sec" id="process">
+<div class="wrap">
+<div class="sec-head reveal"><span class="kicker" data-i18n="k088">03 — How I work</span><h2 data-i18n="k089">A simple process, <em>no surprises</em></h2></div>
+<ol class="steps" data-stagger="">
+<li class="step reveal"><span class="num" data-i18n="k090">01</span><h3 data-i18n="k091">Discuss</h3><p data-i18n="k092">You tell me the idea, the goal and who it is for. We agree on what to build first.</p></li>
+<li class="step reveal"><span class="num" data-i18n="k093">02</span><h3 data-i18n="k094">Plan &amp; design</h3><p data-i18n="k095">I outline the pages and features, then design the look so you can approve it before the build.</p></li>
+<li class="step reveal"><span class="num" data-i18n="k096">03</span><h3 data-i18n="k097">Build</h3><p data-i18n="k098">I develop it step by step and show you progress along the way, so changes are cheap and early.</p></li>
+<li class="step reveal"><span class="num" data-i18n="k099">04</span><h3 data-i18n="k100">Launch &amp; support</h3><p data-i18n="k101">We test it together, put it online, and I stay available for fixes and improvements.</p></li>
+</ol>
+</div>
+</section>
+<!-- ============ ABOUT ============ -->
+<section class="section alt" id="about">
+<div class="wrap about">
+<figure class="about-fig reveal"><img alt="Mina Shenouda working at his desk" data-i18n-attr="alt:k210" height="700" loading="lazy" src="assets/img/profile-about.jpg" width="525"/></figure>
+<div class="reveal"><div class="sec-head"><span class="kicker" data-i18n="k102">04 — About</span><h2 data-i18n="k103">Clear, fast and <em>useful</em> by design.</h2></div>
+<p data-i18n="k104">I'm <strong>Mina Shenouda</strong>, a web developer studying Information Technology with a Full Stack Development focus. I build real, live products, from a <strong>hospital management system with AI chatbots</strong> to a learning platform for programmers.</p>
+<p data-i18n="k105">I care about interfaces that are <strong>clear and responsive</strong>, and about systems that fit the way your business actually works.</p>
+<div class="facts">
+<div class="fact wide"><small data-i18n="k106">Education</small><span data-i18n="k107">Information Technology — Full Stack Development · Third year, graduating 2028</span></div>
+<div class="fact"><small data-i18n="k108">Academics</small><span data-i18n="k109">Distinction in Years 1 and 2</span></div>
+<div class="fact"><small data-i18n="k110">Core stack</small><span data-i18n="k111">Laravel, Python, Java, C++</span></div>
+</div>
+</div>
+</div>
+</section>
+<!-- ============ SKILLS ============ -->
+<section class="section" id="skills">
+<div class="wrap">
+<div class="sec-head reveal"><span class="kicker" data-i18n="k112">05 — Skills</span><h2 data-i18n="k113">Tools and <em>technologies</em></h2></div>
+<div class="skills" data-stagger=""><div class="group reveal"><h3 data-i18n="k114">Front-end</h3><p data-i18n="k115">Interfaces that work on every screen.</p><ul class="tags"><li data-i18n="k116">HTML5</li><li data-i18n="k117">CSS3</li><li class="core" data-i18n="k118">JavaScript</li><li data-i18n="k119">React</li></ul></div><div class="group reveal"><h3 data-i18n="k120">Back-end &amp; data</h3><p data-i18n="k121">Server-side logic, APIs and databases.</p><ul class="tags"><li class="core" data-i18n="k122">PHP / Laravel</li><li data-i18n="k123">Node.js &amp; Express</li><li data-i18n="k124">MySQL</li><li data-i18n="k125">MongoDB</li></ul></div><div class="group reveal"><h3 data-i18n="k126">Languages</h3><p data-i18n="k127">Core programming foundations.</p><ul class="tags"><li class="core" data-i18n="k128">Python</li><li data-i18n="k129">Java</li><li data-i18n="k130">C / C++</li><li data-i18n="k131">C#</li><li data-i18n="k132">Kotlin</li></ul></div><div class="group reveal"><h3 data-i18n="k133">Tools &amp; more</h3><p data-i18n="k134">How I work and what I explore.</p><ul class="tags"><li data-i18n="k135">Git &amp; GitHub</li><li data-i18n="k136">Arduino</li><li data-i18n="k137">Problem solving</li></ul></div></div>
+</div>
+</section>
+<!-- ============ CERTIFICATES ============ -->
+<section class="section alt" id="certificates">
+<div class="wrap">
+<div class="sec-head reveal"><span class="kicker" data-i18n="k138">06 — Certificates</span><h2 data-i18n="k139">Courses &amp; <em>certifications</em></h2></div>
+<div class="certs" data-stagger=""><div class="cert reveal"><span class="n" data-i18n="k140">01</span><h3 data-i18n="k141">Front-End Development</h3><p data-i18n="k142">Mahara-Tech · 2025</p><a href="assets/docs/certificate-frontend-mahara-tech.pdf" rel="noopener" target="_blank"><span data-i18n="k143">View certificate</span> <svg aria-hidden="true" class="ic flip"><use href="#i-arrow-ur"></use></svg></a></div><div class="cert reveal"><span class="n" data-i18n="k144">02</span><h3 data-i18n="k145">Full Stack Developer</h3><p data-i18n="k146">Udemy · 2025</p><a href="assets/docs/certificate-fullstack-udemy.pdf" rel="noopener" target="_blank"><span data-i18n="k147">View certificate</span> <svg aria-hidden="true" class="ic flip"><use href="#i-arrow-ur"></use></svg></a></div><div class="cert reveal"><span class="n" data-i18n="k148">03</span><h3 data-i18n="k149">Flutter &amp; Dart</h3><p data-i18n="k150">Easy Learn Academy · 2025</p><a href="assets/docs/certificate-flutter-dart.pdf" rel="noopener" target="_blank"><span data-i18n="k151">View certificate</span> <svg aria-hidden="true" class="ic flip"><use href="#i-arrow-ur"></use></svg></a></div><div class="cert reveal"><span class="n" data-i18n="k152">04</span><h3 data-i18n="k153">Implementing and Developing SQL Server Objects</h3><p data-i18n="k154">Mahara-Tech · 2025</p><a href="assets/docs/certificate-sql-server-mahara-tech.pdf" rel="noopener" target="_blank"><span data-i18n="k155">View certificate</span> <svg aria-hidden="true" class="ic flip"><use href="#i-arrow-ur"></use></svg></a></div></div>
+</div>
+</section>
+<!-- ============ FAQ ============ -->
+<section class="section" id="faq">
+<div class="wrap">
+<div class="sec-head reveal"><span class="kicker" data-i18n="k156">07 — FAQ</span><h2 data-i18n="k157">Questions <em>before we start</em></h2></div>
+<div class="faq reveal">
+<details><summary data-i18n="k158">How long does a project take?</summary><p data-i18n="k159">A simple business or portfolio website usually takes one to two weeks. A full management system takes longer. After we talk, I give you a clear timeline before any work begins.</p></details>
+<details><summary data-i18n="k160">How much does it cost?</summary><p data-i18n="k161">It depends on the pages, features and design you need. Send me a short brief and I will reply with a fair quote, so there are no surprises later.</p></details>
+<details><summary data-i18n="k162">Will my website work on phones?</summary><p data-i18n="k163">Yes. Every project is built responsive and tested on phones, tablets and desktops.</p></details>
+<details><summary data-i18n="k164">Can you add features or fix things after launch?</summary><p data-i18n="k165">Yes. I stay available after launch for fixes, updates and new features.</p></details>
+<details><summary data-i18n="k166">What do you need from me to start?</summary><p data-i18n="k167">Your idea, who it is for, and any content or branding you already have (logo, text, photos). If you have none of these yet, we can work it out together.</p></details>
+</div>
+</div>
+</section>
+<!-- ============ CTA BAND ============ -->
+<section aria-label="Call to action" class="band" data-i18n-attr="aria-label:k211"><div class="wrap band-in reveal"><h2 data-i18n="k168">Have an idea? <em>Let's make it real.</em></h2><a class="btn btn-dark btn-lg" href="#contact"><span data-i18n="k169">Start a project</span> <svg aria-hidden="true" class="ic flip"><use href="#i-arrow-r"></use></svg></a></div></section>
+<!-- ============ CONTACT ============ -->
+<section class="section contact-sec" id="contact">
+<div class="wrap contact">
+<div class="reveal c-copy"><span class="kicker" data-i18n="k170">08 — Hire me</span><h2 data-i18n="k171">Let's build <em>your project.</em></h2>
+<p data-i18n="k172">Tell me what you need and I'll get back to you. The form opens WhatsApp with your message ready to send, so there is nothing to sign up for.</p>
+<ul class="links">
+<li><a href="https://wa.me/201212858582" rel="noopener" target="_blank"><span class="ic-box"><svg aria-hidden="true" class="ic"><use href="#i-wa"></use></svg></span><span><b data-i18n="k173">WhatsApp</b><small data-i18n="k174" dir="ltr">+20 121 285 8582</small></span><span class="go"><svg aria-hidden="true" class="ic flip"><use href="#i-arrow-ur"></use></svg></span></a></li>
+<li><a href="mailto:monshenouda01@gmail.com"><span class="ic-box"><svg aria-hidden="true" class="ic"><use href="#i-mail"></use></svg></span><span><b data-i18n="k175">Email</b><small data-i18n="k176" dir="ltr">monshenouda01@gmail.com</small></span><span class="go"><svg aria-hidden="true" class="ic flip"><use href="#i-arrow-ur"></use></svg></span></a></li>
+<li><a href="https://www.linkedin.com/in/mina-shenouda-7b002b254" rel="noopener" target="_blank"><span class="ic-box"><svg aria-hidden="true" class="ic"><use href="#i-in"></use></svg></span><span><b data-i18n="k177">LinkedIn</b><small data-i18n="k178">Mina Shenouda</small></span><span class="go"><svg aria-hidden="true" class="ic flip"><use href="#i-arrow-ur"></use></svg></span></a></li>
+<li><a href="https://www.facebook.com/share/1EahEcfzfz/" rel="noopener" target="_blank"><span class="ic-box"><svg aria-hidden="true" class="ic"><use href="#i-fb"></use></svg></span><span><b data-i18n="k179">Facebook</b><small data-i18n="k180">Mina Shenouda</small></span><span class="go"><svg aria-hidden="true" class="ic flip"><use href="#i-arrow-ur"></use></svg></span></a></li>
+</ul>
+</div>
+<form class="brief reveal" id="brief" novalidate="">
+<h3 data-i18n="k181">Project brief</h3>
+<fieldset><legend data-i18n="k182">What do you need?</legend>
+<div class="chips">
+<label><input name="svc" type="checkbox" value="Web design"/><span data-i18n="k183">Web design</span></label>
+<label><input name="svc" type="checkbox" value="Full-stack development"/><span data-i18n="k184">Full-stack development</span></label>
+<label><input name="svc" type="checkbox" value="Responsive UI/UX"/><span data-i18n="k185">Responsive UI/UX</span></label>
+<label><input name="svc" type="checkbox" value="Mobile app"/><span data-i18n="k186">Mobile app</span></label>
+<label><input name="svc" type="checkbox" value="IoT solution"/><span data-i18n="k187">IoT solution</span></label>
+</div>
+</fieldset>
+<label class="fld"><span data-i18n="k188">Your name</span><input autocomplete="name" data-i18n-attr="placeholder:k212" dir="auto" name="name" placeholder="Your name" type="text"/></label>
+<label class="fld"><span data-i18n="k189">Tell me about your project</span><textarea data-i18n-attr="placeholder:k213" dir="auto" name="details" placeholder="What is it, who is it for, and when do you need it?" rows="4"></textarea></label>
+<div class="row">
+<button class="btn btn-lg" type="submit"><svg aria-hidden="true" class="ic"><use href="#i-wa"></use></svg> <span data-i18n="k190">Send on WhatsApp</span></button>
+<button class="btn btn-ghost btn-lg" id="send-mail" type="button"><svg aria-hidden="true" class="ic"><use href="#i-mail"></use></svg> <span data-i18n="k191">Email instead</span></button>
+</div>
+</form>
+</div>
+</section>
+</main>
+<footer class="site-footer"><div class="wrap"><span data-i18n="k192">© 2026 Mina Shenouda — All Rights Reserved</span><a data-i18n="k193" download="" href="assets/docs/Mina_Shenouda_CV.pdf">Download CV</a></div></footer>
+<button aria-label="Back to top" class="to-top" data-i18n-attr="aria-label:k214" type="button"><svg aria-hidden="true" class="ic"><use href="#i-up"></use></svg></button>
+<script src="i18n.js"></script>
+<script src="main.js"></script>
+</body>
 </html>

@@ -317,6 +317,23 @@ html[dir=rtl] .links a:hover{transform:translateX(-6px)}
   .marquee{overflow-x:auto}
 }
 
+/* ===== Small-screen refinements ===== */
+@media(max-width:900px){
+  .hero::before{background:radial-gradient(90% 38% at 50% 0%,var(--glow),transparent 70%),linear-gradient(var(--line) 1px,transparent 1px) 0 0/64px 64px,linear-gradient(90deg,var(--line) 1px,transparent 1px) 0 0/64px 64px;-webkit-mask:linear-gradient(#000 40%,transparent);mask:linear-gradient(#000 40%,transparent)}
+}
+@media(max-width:480px){
+  .wrap{width:calc(100% - 40px)}
+  .hire{display:none}
+  .hero{padding-top:calc(var(--hh) + 16px)}
+  .avail{font-size:.64rem;padding:6px 12px 6px 10px}
+  .hero h1{font-size:clamp(2.5rem,12.4vw,3rem);margin:20px 0 16px}
+  .lead{font-size:1rem;line-height:1.6}
+  .cta{flex-wrap:nowrap;gap:10px;margin:26px 0 20px}
+  .cta .btn-lg{flex:1 1 0;padding:14px 10px;font-size:.92rem;white-space:nowrap}
+  .cta .btn .ic{display:none}
+  .portrait{max-width:300px;margin-top:28px}
+}
+
 /* ===== Arabic / RTL ===== */
 html[lang=ar]{--serif:"Cairo","Segoe UI",Tahoma,sans-serif;--sans:"IBM Plex Sans Arabic","Inter Tight","Segoe UI",Tahoma,sans-serif}
 html[lang=ar] *{letter-spacing:0!important}
